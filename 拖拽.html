@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        * {
+
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #div1 {
+            cursor: pointer;
+            background: red;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+        }
+
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h></h>
+<div id="div1">
+
+</div>
+
+<script>
+    var aDiv = document.getElementById('div1');
+
+    aDiv.onmousedown = function (e) {
+        //解决事件的兼容性问题
+        e = e || window.event;
+        //求出鼠标和odiv的距离
+
+        var distanceX = e.clientX - aDiv.offsetLeft;
+        var distanceY = e.clientY - aDiv.offsetTop;
+
+        document.onmousemove = function (e) {
+//鼠标拖动的时候改变距离
+            aDiv.style.left = e.clientX - distanceX + 'px';
+            aDiv.style.top = e.clientY - distanceY + 'px';
+            return false;
+
+        };
+    };
+//用document更好的响应
+    document.onmouseup = function () {
+        document.onmousemove = null;
+    };
+</script>
+</body>
+</html>

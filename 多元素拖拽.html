@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+        * {
+
+            padding: 0;
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            cursor: pointer;
+
+        }
+
+        #div1{
+            top:0;
+
+
+        }
+        #div2 {
+            top: 200px;
+        }
+
+
+        #div3{
+            top: 500px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+<div id="div3">div3</div>
+
+<script>
+    var div1=document.getElementById('div1');
+    var div2=document.getElementById('div2');
+    var div3=document.getElementById('div3');
+
+
+    odrag(div1);
+    odrag(div2);
+    odrag(div3);
+    function odrag(aDiv) {
+
+        aDiv.onmousedown = function (e) {
+            //解决事件的兼容性问题
+            e = e || window.event;
+            //求出鼠标和odiv的距离
+
+            var distanceX = e.clientX - aDiv.offsetLeft;
+            var distanceY = e.clientY - aDiv.offsetTop;
+
+            document.onmousemove = function (e) {
+//鼠标拖动的时候改变距离
+                aDiv.style.left = e.clientX - distanceX + 'px';
+                aDiv.style.top = e.clientY - distanceY + 'px';
+                return false;
+
+            };
+        };
+//用document更好的响应
+        document.onmouseup = function () {
+            document.onmousemove = null;
+        };
+
+    }
+
+</script>
+</body>
+</html>
