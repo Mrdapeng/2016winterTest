@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #div1{
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            border: 1px solid;
+        }
+    </style>
+    <script src="js/jquery-3.1.1.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1">asssad</div>
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#div1").mousedown(function () {
+
+            $("#div1").css("background","#ff0");
+
+        });
+    });
+
+</script>
+</body>
+</html>

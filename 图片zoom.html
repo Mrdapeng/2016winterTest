@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        * {
+
+            padding: 0;
+            margin: 0;
+        }
+
+        img {
+
+            border: 0;
+        }
+
+        #small_img {
+
+            width: 400px;
+            height: 400px;
+            position: relative;
+            float: left;
+
+        }
+
+        #small_img img {
+
+            width: 400px;
+            height: 400px;
+
+
+        }
+
+        #big_img {
+            width: 400px;
+            height: 400px;
+            overflow: hidden;
+            float: left;
+            /*display: none;*/
+            position: relative;
+        }
+
+        #cursor {
+            background: red;
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            cursor: pointer;
+            left: 0;
+            top: 0;
+            /*display: none;*/
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="small_img">
+    <img src="img/1.jpg" alt="">
+    <div id="cursor"></div>
+</div>
+<div id="big_img">
+    <img id="big_pic" src="img/2.jpg" alt="">
+</div>
+
+
+<script>
+    var cursor = document.getElementById('cursor');
+    var small_img = document.getElementById('small_img');
+    var bigImage = document.getElementById('big_img');
+    cursor.onmousedown = function (e) {
+        e = e || window.event;
+        var distanceX = e.clientX - cursor.offsetLeft;
+        var distanceY = e.clientY - cursor.offsetTop;
+
+        document.onmousemove = function (e) {
+            var top = e.clientY - distanceY;
+            var left = e.clientX - distanceX;
+
+            if (top < 0) {
+                top = 0;
+
+
+            }
+            if (left < 0) {
+                left = 0;
+            }
+            if (left > small_img.offsetWidth - cursor.offsetWidth) {
+                left = small_img.offsetWidth - cursor.offsetWidth;
+            }
+
+            if (top > small_img.offsetHeight - cursor.offsetHeight) {
+                top = small_img.offsetHeight - cursor.offsetHeight;
+
+            }
+            cursor.style.top = top + 'px';
+            cursor.style.left = left + 'px';
+            return false;
+        };
+
+    };
+
+    document.onmouseout = function () {
+        cursor.onmouseup = null;
+    };
+
+</script>
+</body>
+</html>

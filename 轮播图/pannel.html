@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #pannel, #content {
+            color: #000000;
+            padding: 20px;
+            background: aqua;
+            text-align: center;
+            border: 1px solid black;
+            font-size: 20px;
+        }
+
+        #content {
+            display: none;
+            padding: 50px;
+        }
+    </style>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="pannel">main</div>
+<div id="content">内容</div>
+
+<script>
+
+    $(document).ready(function () {
+
+        $("#pannel").on("click", function () {
+//            for (var i = 0; i <100; i++) {
+//                var obj = array[i];
+                $("#content").css("background", rgb()).slideToggle(2000, function(){
+                    $(this).css("background", rgb());
+                });
+
+//            }
+
+        });
+
+        setInterval(function(){
+            $("#pannel").trigger("click");
+        }, 2000);
+
+
+        function rgb(){
+            var r=Math.floor(Math.random()*255);
+            var g=Math.floor(Math.random()*255);
+            var b=Math.floor(Math.random()*255);
+            var rgb='rgb('+r+','+g+','+b+')';
+            console.log(rgb);
+            return rgb;
+        }
+
+    });
+
+
+</script>
+</body>
+</html>

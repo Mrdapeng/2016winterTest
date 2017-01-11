@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+            position: relative;
+            width: 550px;
+            height: 450px;
+            background: gray;
+            overflow: hidden;
+
+
+        }
+
+        /*#container div {*/
+
+            /*float: left;*/
+
+        /*}*/
+
+        a {
+
+            text-decoration: none;
+        }
+
+        #text {
+            width: 500px;
+            /*height: 450px;*/
+            background: gray;
+            overflow: hidden;
+            word-break: break-all;
+            position: absolute;
+            left: 0;
+            top: 0;
+            /*position: absolute;*/
+        }
+
+        #nav {
+            width: 50px;
+            height: 450px;
+            background: #bbb;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+        #cursor {
+            width: 50px;
+            height: 50px;
+            background: red;
+            cursor: pointer;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+
+    <div id="text">
+        sadasdsad
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsad
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadasdsadsadasdsadsadasdsad
+        sadasdsad
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadasdsadsadasdsadsadasdsad
+        sadasdsad
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadasdsadsadasdsadsadasdsad
+        sadasdsad
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadas
+        sadasdsadsadasdsadsadasdsadsadasdsadsadasdsad
+        sadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsadsadasdsad
+    </div>
+
+    <div id="nav">
+        <div id="cursor"></div>
+    </div>
+
+</div>
+<script>
+    var text = document.getElementById('text');
+    var textHeight = text.offsetHeight + 'px';
+    var cursor = document.getElementById('cursor');
+    var container = document.getElementById('container');
+    var nav = document.getElementById('nav');
+
+    cursor.onmousedown = function (e) {
+        e = e || window.event;
+        var distanceY = e.clientY - cursor.offsetTop;
+        document.onmousemove = function (e) {
+            e = e || window.event;
+            var top = e.clientY - distanceY;
+            if (top < 0) {
+                top = 0;
+            }
+            if (top > nav.offsetHeight - cursor.offsetHeight) {
+                top = nav.offsetHeight - cursor.offsetHeight;
+            }
+            cursor.style.top = top + 'px';
+            /*
+             * 比例关系
+             *
+             *
+             *
+             *
+             *
+             *
+             *
+             *
+             * */
+
+//内容移动
+            var fSale = top / (nav.offsetHeight - cursor.offsetHeight);
+            text.style.top = -(text.offsetHeight-container.offsetHeight)*fSale+'px';
+//            cursor.style.top = e.clientY - distanceY + 'px';
+            return false;
+        };
+
+    };
+
+
+    cursor.onmouseup = function () {
+
+        document.onmousemove = null;
+
+    }
+
+
+</script>
+</body>
+</html>

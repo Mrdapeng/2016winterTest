@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+
+        #small {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            left: 0;
+            top: 0;
+            /*background: red;*/
+        }
+
+        #big {
+            position: absolute;
+            /*background: #000;*/
+            width: 400px;
+            height: 400px;
+            left: 400px;
+            display: none;
+            top: 0;
+            overflow: hidden;
+        }
+
+        #drag {
+            width: 200px;
+            height: 200px;
+            background: gray;
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.5;
+            filter: alpha(opacity=50);
+            cursor: pointer;
+            display: none;
+        }
+
+        #big-pic {
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #mask {
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            background: #000;
+            opacity: 0;
+            filter: alpha(opacity=50);
+            left: 0;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="container">
+    <div id="small">
+        <img src="img/1.jpg" alt="">
+        <div id="drag"></div>
+        <div id="mask"></div>
+    </div>
+    <div id="big">
+        <img id="big-pic" src="img/2.jpg" alt="">
+    </div>
+
+</div>
+
+<script>
+
+    var small = document.getElementById('small');
+    var big = document.getElementById('big');
+    var drag = document.getElementById('drag');
+    var big_img = document.getElementById('big-pic');
+    var mask = document.getElementById('mask');
+
+    mask.onmouseover = function () {
+        drag.style.display = "block";
+        big.style.display = "block";
+
+
+    };
+
+    mask.onmouseout = function () {
+        drag.style.display = "none";
+        big.style.display = "none";
+    };
+
+    mask.onmousemove = function (e) {
+        e = e || window.event;
+
+
+        var left = e.clientX - drag.offsetWidth / 2;
+        var top = e.clientY - drag.offsetHeight / 2;
+        var disX = small.offsetWidth - drag.offsetWidth;
+        var disY = small.offsetHeight - drag.offsetHeight;
+
+        if (left < 0) {
+            left = 0;
+        }
+        if (left > disX) {
+
+            left = disX;
+        }
+
+
+        if (top < 0) {
+
+            top = 0;
+        }
+
+
+        if (top > disY) {
+            top = disY;
+        }
+        drag.style.left = left + 'px';
+        drag.style.top = top + 'px';
+
+
+        var xScale = left / disX;
+        var yScale = top / disY;
+
+        big_img.style.left = -xScale * (big_img.offsetWidth - big.offsetWidth) + "px";
+        big_img.style.top = -yScale * (big_img.offsetHeight - big.offsetHeight) + "px";
+
+
+    };
+
+
+</script>
+</body>
+</html>
