@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        table		{ border:0;border-collapse:collapse;}
+        td	{ font:normal 12px/17px Arial;padding:2px;width:100px;}
+        th			{ font:bold 12px/17px Arial;text-align:left;padding:4px;border-bottom:1px solid #333;}
+        .even		{ background:#FFF38F;}  /* 偶数行样式*/
+        .odd		{ background:#FFFFEE;}  /* 奇数行样式*/
+        .selected		{ background:#FF6500;color:#fff;}
+    </style>
+<body>
+<table>
+    <thead>
+    <tr><th>键盘名称</th><th>价格</th><th>生产地</th></tr>
+    </thead>
+    <tr>
+        <td>ducky01</td>
+        <td>ducky02</td>
+        <td>ducky03</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>100</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>china</td>
+        <td>china</td>
+        <td>china</td>
+    </tr>
+</table>
+<script>
+
+    $(function(){
+        $("tbody>tr:odd").addClass("odd"); //先排除第一行,然后给奇数行添加样式
+        $("tbody>tr:even").addClass("even"); //先排除第一行,然后给偶数行添加样式
+    })
+
+</script>
+</body>
+</html>

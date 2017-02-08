@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        #container div {
+            float: left;
+            margin-right: 20px;
+
+        }
+
+        div select {
+            padding: 10px;
+            width: 100px;
+            height: 150px;
+            text-align: center;
+        }
+
+        #control span {
+
+            border: 1px solid teal;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.12.4.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <div id="div1">
+        <select multiple="multiple" id="sel1">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+            <option value="">4</option>
+            <option value="">5</option>
+            <option value="">6</option>
+            <option value="">7</option>
+            <option value="">8</option>
+        </select>
+    </div>
+    <div id="div2">
+        <select multiple="multiple" id="sel2">
+            <option value="">1*</option>
+            <option value="">2*</option>
+            <option value="">3*</option>
+            <option value="">4*</option>
+            <option value="">5*</option>
+            <option value="">6*</option>
+            <option value="">7*</option>
+            <option value="">8*</option>
+        </select>
+    </div>
+</div>
+<br>
+<div id="control">
+    <span id="add">右移</span>
+    <span id="addall">全部右移</span>
+    <span id="remove">左移</span>
+    <span id='removeall'>全部左移</span>
+</div>
+</body>
+<script>
+    $(function () {
+        $('#add').on('click', function () {
+            $('#sel1 option:selected').appendTo($('#sel2'));
+
+        });
+        $('#addall').on('click', function () {
+            $('#sel1 option').appendTo($('#sel2'));
+
+        });
+        $('#remove').on('click', function () {
+            $('#sel2 option:selected').appendTo($('#sel1'));
+
+        });
+        $('#removeall').on('click', function () {
+            $('#sel2 option').appendTo($('#sel1'));
+
+        });
+    });
+
+</script>
+</html>

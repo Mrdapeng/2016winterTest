@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="test-p">this is test </p>
+<p class="testP" id="test-p1">this is test </p>
+<p>cool1</p>
+<p>cool2</p>
+<p>cool3</p>
+<p>cool4</p>
+<p>cool5</p>
+<p>cool6</p>
+<p>cool7</p>
+<p>cool8</p>
+<p>cool9</p>
+<h3 id="test-h31">cool</h3>
+<h3 id="test-h32">cool</h3>
+<h3 id="test-h33">cool</h3>
+<h3 id="test-h34">cool</h3>
+<h3 id="test-h35">cool</h3>
+<h1 id="test-h1"></h1>
+<div id="test-div"></div>
+<div id="fadein" style="width: 20px;height: 20px; background:#000;"></div>
+<br>
+<div id="div1"style="width: 20px;height: 20px; background:#ff0000;"></div>
+<br>
+<div id="div2"style="width: 20px;height: 20px; background:#ff0000;"></div>
+<br>
+<div id="div3"style="width: 20px;height: 20px; background:#ff0000;"></div>
+<br>
+<button id="fade-out">button</button>
+<script src="jquery-3.1.1.js"></script>
+<script>
+    $(function () {
+        $("#test-p").on("click", function () {
+            $(this).hide();
+
+        });
+        $(".testP#test-p1").on("click", function () {
+            $(this).hide();
+
+        });
+        $("#fade-out").on("click",function () {
+            $('#div1').fadeOut();
+            $('#div2').fadeOut("slow");
+            $('#div3').fadeOut(3000);
+        });
+
+
+
+        $("p").css("background","#bbb");
+        console.log($("p").parent());
+        $("h3").css("font-size","20px");
+
+        $("#fadein").toggle(function () {
+            console.log("is ok");
+        });
+
+    });
+</script>
+</body>
+</html>
