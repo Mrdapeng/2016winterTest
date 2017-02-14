@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bootstrap 实例 - 两端对齐的导航元素</title>
+    <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+</head>
+<body><p>两端对齐的导航元素</p>
+<ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">SVN</a></li>
+    <li><a href="#">iOS</a></li>
+    <li><a href="#">VB.Net</a></li>
+    <li><a href="#">Java</a></li>
+    <li><a href="#">PHP</a></li>
+</ul>
+<br><br><br>
+<ul id="nav" class="nav nav-tabs nav-justified">
+    <li class=" active "><a href="#">Home</a></li>
+    <li><a href="#">SVN</a></li>
+    <li><a href="#">iOS</a></li>
+    <li><a href="#">VB.Net</a></li>
+    <li><a href="#">Java</a></li>
+    <li><a href="#">PHP</a></li>
+</ul>
+<script>
+
+    var oTabs = document.getElementById('nav');
+    var aLis = oTabs.getElementsByTagName('li');
+    var inow = 0;
+    for (var i = 0; i < aLis.length; i++) {
+        aLis[i].index = i;
+        aLis[i].onmousedown = function () {
+            inow = this.index;
+            changeStyle();
+        }
+    }
+    function changeStyle() {
+
+        for (var i = 0; i < aLis.length; i++) {
+            aLis[i].className = "";
+        }
+        aLis[inow].className='active';
+    }
+</script>
+</body>
+</html>

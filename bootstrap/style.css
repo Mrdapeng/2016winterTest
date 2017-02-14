@@ -1,0 +1,54 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.head {
+    height: 80px;
+    background: #ff0000;
+}
+
+.head-top{
+    background: #e0e0e0;
+    height: 40px;
+
+}
+.head-bottom{
+    background: #ee00ff;
+    height: 40px;
+}
+.content{
+    height: 500px;
+    background: #5e5e5e;
+}
+.side{
+
+    height: 500px;
+    background: #c7254e;
+}
+.content-box{
+    height: 500px;
+}
+.con-head1{
+    height: 130px;
+    background: #CDE074;
+}
+.con-head2{
+    height: 130px;
+    background: #c7ddef;
+}
+
+.role-ad{
+    float: left;
+    width: 550px;
+    height: 280px;
+    overflow: hidden;
+    background: #000;
+}
+.ad-tab{
+    height: 40px;
+    width: 550px;
+    background: red;
+}
+.role-ad ul{
+    float: left;
+}
