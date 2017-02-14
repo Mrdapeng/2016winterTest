@@ -1,0 +1,12 @@
+/*
+树叶是图片。放在div里面
+对父容器进行相对定位，孩子绝对定位
+
+*/
+
+#container{
+    position: relative;
+}
+img{
+    position: absolute;
+}
