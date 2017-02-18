@@ -1,0 +1,34 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.div1{
+    width: 200px;
+    height: 200px;
+    background: blue;
+    -webkit-transform: translate(100px,200px);
+    -moz-transform: translate(100px,200px);
+    -ms-transform: translate(100px,200px);
+    -o-transform: translate(100px,200px);
+    transform: translate(300px,200px);
+}
+ 
+.div2{
+    background: red;
+    width: 200px;
+    height: 200px;
+    -webkit-transform: rotate(130deg);
+    -moz-transform: rotate(130deg);
+    -ms-transform: rotate(130deg);
+    -o-transform: rotate(130deg);
+    transform: rotate(130deg);
+    
+}
+.div2:hover{
+    -webkit-transform: skew(30deg,30deg);
+    -moz-transform: skew(30deg,30deg);
+    -ms-transform: skew(30deg,30deg);
+    -o-transform: skew(30deg,30deg);
+    transform: skew(30deg,30deg);
+}
+

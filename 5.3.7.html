@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    function fbicnaoct(num) {
+        if (num == 1 || num == 2) {
+            return 1;
+        }
+        return fbicnaoct(num - 1) + fbicnaoct(num - 2);
+
+    }
+    fbicnaoct(10);
+    document.write(fbicnaoct(10));
+
+    function fbinaco2(num) {
+        var arr = [1, 1];
+        for (var i = 2; i < num; i++) {
+            arr[i] = arr[i - 1] + arr[i - 2];
+        }
+        return arr[num - 1];
+    }
+    console.log(fbinaco2(10));
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*
+     * 将输入的字符串的数字提取出来
+     *
+     *
+     * */
+    //    var sInput = prompt("请输入字符串", "");
+    //    function stringInNum(str) {
+    //        return parseInt(str);
+    //
+    //    }
+    //    console.log(stringInNum(sInput));
+    //    console.log(parseInt("11",2));
+
+
+    function Merge(s1, s2) {
+        var aS1 = [];
+        var aS2 = [];
+        var str = "";
+        for (var i = 0; i < s1.length; i++) {
+            aS1.push(s1[i]);
+
+        }
+        for (var i = 0; i < s2.length; i++) {
+            aS2.push(s2[i]);
+
+        }
+
+        if (s1.length == s2.length) {
+            for (var i = 0; i < aS1.length; i++) {
+                str += aS1[i] + aS2[i % aS2.length];
+            }
+
+        } else {
+            var min = max(s1, s2);
+            for (var i = 0; i < min.length; i++) {
+
+            }
+
+
+        }
+        console.log(str);
+    }
+    function min(s1, s2) {
+
+        return s1.length < s2.length ? s1 : s2;
+    }
+    Merge("123", "abc");
+    arr.sorret
+</script>
+</body>
+</html>

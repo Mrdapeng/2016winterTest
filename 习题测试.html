@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function mutiply(num) {
+
+        return (num <= 1) ? 1 : num * mutiply(num - 1);
+    }
+
+    var show_num = mutiply(10);
+    console.log(show_num);
+</script>
+
+
+</body>
+</html>

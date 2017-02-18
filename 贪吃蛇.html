@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #container {
+            width: 1000px;
+            margin: 50px auto;
+            border: 1px solid black;
+
+        }
+
+        #ground {
+            width: 1000px;
+            height: 500px;
+            background: #ccc;
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #footer {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        #banner {
+            float: left;
+        }
+
+        #buttons {
+
+            float: right;
+        }
+
+        .small-div {
+            width: 20px;
+            height: 20px;
+            background: orange;
+            float: left;
+        }
+
+        .snake {
+
+            background: red;
+            position: absolute;
+            top: 60px;
+        }
+
+        .food {
+            position: absolute;
+            background: green;
+        }
+    </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+<div id="container">
+
+    <div id="ground">
+
+    </div>
+    <div id="footer">
+        <div id="banner">贪吃蛇bylrp</div>
+        <div id="buttons">
+            <button id="btnstart" type="">开始</button>
+            <button id="btnStop" type="">暂停</button>
+        </div>
+    </div>
+</div>
+<script>
+
+    //1.画操场
+
+    var oGround = document.getElementById('ground');
+
+    for (var i = 0; i < 50 * 25; i++) {
+        var oDiv = document.createElement('div');
+        oDiv.className = 'small-div';
+        oGround.appendChild(oDiv);
+
+    }
+    //创建蛇
+    var snakebody = [];
+    for (var i = 0; i < 3; i++) {
+        var oDiv = document.createElement('div');
+        oDiv.className = 'snake small-div';
+        oDiv.style.left = (3 - i) * 20 + "px";
+        oGround.appendChild(oDiv);
+        snakebody.push(oDiv);
+    }
+    //生成食物
+    function createFood() {
+        var oDiv = document.createElement('div');
+        oDiv.className = 'food small-div';
+        var ileft = itop = 0;
+        do {
+            var bfound = true;
+            ileft = Math.floor(Math.random() * 50) * 20;
+            itop = Math.floor(Math.random() * 25) * 20;
+            for (var i = 0; i < snakebody.length; i++) {
+                if (snakebody[i].offsetLeft == ileft && snakebody[i].offsetTop == itop) {
+                    bfound = false;
+                }
+
+            }
+        } while (!bfound);
+        oDiv.style.left = ileft + "px";
+        oDiv.style.top = itop + "px";
+        oGround.appendChild(oDiv);
+    }
+
+    createFood();
+
+    //蛇移动
+    var obtnStart = document.getElementById("btnstart");
+    var timer;
+    var direction = "right";
+
+    obtnStart.onclick = function () {
+        clearInterval(timer);
+        timer = setInterval(function () {
+
+//            for (var i = snakebody-1; i >0; i--) {
+//                snakebody[i].style.left = snakebody[i - 1].offsetLeft + "px";
+//
+//            }
+            for (var i = 0; i<snakebody.length; i++) {
+                snakebody[i].left = snakebody[i].offsetLeft;
+                snakebody[i].top = snakebody[i].offsetTop;
+
+            }
+
+            var snakeHead = snakebody[0];
+            if (direction == "right") {
+                snakeHead.style.left = snakeHead.offsetLeft + 20 + 'px';
+            }else if (){
+
+            }else if(){
+
+            }
+            for (var i =1; i >snakebody.length; i++) {
+                snakebody[i].style.left = snakebody[i - 1].left + "px";
+                snakebody[i].style.top = snakebody[i - 1].top + "px";
+
+
+            }
+        }, 1000);
+
+    };
+
+    var obtnStop = document.getElementById('btnStop');
+    obtnStop.onclick = function () {
+        clearInterval(timer);
+    };
+    //吃食物 增长身体
+    //吃到自己或者墙游戏结束
+</script>
+</body>
+</html>

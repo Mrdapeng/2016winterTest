@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        button {
+            padding: 20px;
+            background: #cccccc;
+            position: absolute;
+            left: 500px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+<title>键盘输入的值</title>
+<div id="cool"></div>
+<button id="btn">清除</button>
+<script>
+    var str = "";
+    var divs = document.getElementById("cool");
+    function showkey() {
+        asc = event.keyCode;
+        key = String.fromCharCode(asc);
+        str += key;
+        divs.innerHTML = str;
+
+    }
+    document.onkeypress = showkey;
+    var btn = document.getElementById("btn");
+    btn.onclick = function () {
+        str = "";
+        divs.innerHTML = "";
+    };
+
+</script>
+</body>
+</html>

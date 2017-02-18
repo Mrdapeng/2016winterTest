@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            border: 1px solid black;
+
+        }
+
+        .main {
+            background: #eeeeee;
+            width: 80px;
+            text-align: center;
+        }
+
+        .sub-main {
+            background:#eee;
+        }
+        .sub-main a{
+            background: #000;
+            color: white;
+        }
+        .main ul{
+            display: none;
+        }
+
+        .hmain {
+            float: left;
+        }
+        .hmain ul{
+            display: none;
+        }
+    </style>
+    <script src="../jquery-1.12.4.js"></script>
+</head>
+<body>
+<ul>
+    <li class="main">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+    <li class="main">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+</ul>
+<br>
+
+
+
+<ul>
+    <li class="hmain">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+    <li class="hmain">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+    <li class="hmain">
+        <a href="#">主菜单</a>
+        <ul class="sub-main">
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+            <li><a href="">子菜单</a></li>
+        </ul>
+    </li>
+</ul>
+</body>
+<script>
+    $(function () {
+
+       $(".main").children("a").on("click",function () {
+          $(this).next("ul").toggle();
+       });
+
+       $(".hmain").hover(function () {
+           $(this).children("ul").slideDown();
+       },function () {
+           $(this).children("ul").slideUp();
+       })
+    });
+</script>
+</html>

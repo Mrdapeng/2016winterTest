@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            border: 2px solid black;
+
+        }
+
+        .box1, .box2 {
+            border: 1px solid palegreen;
+            background: red;
+            width: 180px;
+            height: 100px;
+
+        }
+
+        .box1 {
+            float: left;
+        }
+
+        .box2 {
+            float: right;
+        }
+
+        /*
+        添加一个空div，设置他的class为clear:both;
+        */
+        .clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    内容
+    <div class="box1">
+        内容1
+    </div>
+    <div class="box2">
+        内容2
+    </div>
+    <div class="clear">
+
+    </div>
+</div>
+</body>
+</html>

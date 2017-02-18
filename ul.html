@@ -1,23 +1,43 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
     <style>
-        li{
-            width: 150px;
-            height: 50px;
-            background: #cccccc;
-            float: left;
-            margin-right: 5px;
+        * {
+
+        }
+
+        body {
+            color: #fff;
+            background: #000;
+        }
+
+        ul, ol {
+            /*list-style:none;*/
+        }
+
+        #list li {
+            padding: 1em;
+            color: #ccc;
+
         }
     </style>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
 </head>
 <body>
-    <ul>
-        <li>item 1</li>
-        <li>item 2</li>
-        <li>item 3</li>
+<h1>What to buy?</h1>
+<div id="container">
+    <h1 class=" cool red blue">DONT forget to buy the stuff</h1>
+    <br>
+    <ul id="list">
+        <li>a tin of bears</li>
+        <li>cheese</li>
+        <li>milk</li>
     </ul>
+</div>
+<script>
+    var item=document.getElementsByClassName("cool  ");
+    alert(typeof item);
+</script>
 </body>
 </html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    //    function fn(num) {
+    //
+    //        for (var i = 1; i < num; i++) {
+    //
+    //            for (var j = 1; j <= i; j++) {
+    //                document.write(j + "&nbsp");
+    //            }
+    //            document.write("<br>")
+    //        }
+    //    }
+    //    //    fn(5);
+    //
+    //
+    //    function fn2(num) {
+    //        for (var i = 0; i < num; i++) {
+    //            /*
+    //             *倒着递增，
+    //             *
+    //             * */
+    //            for (var j = 0; j < num - i; j++) {
+    //                document.write("&nbsp");
+    //            }
+    //            for (var j = 0; j <= i; j++) {
+    //                document.write("*" + "&nbsp");
+    //            }
+    //            document.write("<br>");
+    //        }
+    //
+    //
+    //    }
+    //    fn2(50);
+    //    function fn3() {
+    //        var input_x = prompt("请输入x的值", "");
+    //        var out_num = 4 * input_x * input_x + 3 + input_x + 2;
+    //        document.write(out_num);
+    //
+    //    }
+    //    //    fn3();
+
+    //    function fn_min() {
+    //
+    //
+    //        var x = prompt("请输入一个数", "");
+    //        var y = prompt("请输入一个数", "");
+    //        return x > y ? x : y;
+    //
+    //
+    //    }
+    //    alert(fn_min());
+
+
+    function fn_chu() {
+        var index = 0;
+        for (var i = 1; i <= 1000; i++) {
+
+            if ( i % 3 == 0 && i % 5 == 0 && i % 7 == 0) {
+                index++;
+                document.write(i + "&nbsp");
+
+                if (index % 6 == 0) {
+                    document.write("<br>");
+                }
+
+
+            }
+        }
+
+
+    }
+
+    fn_chu();
+    //    for (var i = 1; i < 1000; i++) {
+    //        var index = 1;
+    //        if (fn_chu(i)){
+    //
+    //            index++;
+    //        }
+    //        if (index % 6 == 0) {
+    //            document.write("<br>");
+    //        }
+    //
+    //
+    //    }
+
+</script>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        button {
+            padding: 6px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button>点击</button>
+<script>
+    var arr = [];
+    var sum = 0;
+    for (var i = 0; i < 7; i++) {
+
+        var input = prompt("请输入数字", "");
+        arr.push(input);
+    }
+    var btn = document.getElementsByTagName("button")[0];
+    btn.onclick = function () {
+        for (var i = 0; i < arr.length; i++) {
+            sum += Number(arr[i]);
+        }
+        console.log(sum/7);
+
+    };
+    console.log(arr.length);
+</script>
+</body>
+</html>

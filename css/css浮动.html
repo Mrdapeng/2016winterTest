@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        /*
+
+        正常是标准流体,之后浮动会脱离文本流
+             假如某个div元素A是浮动的，如果A元素上一个元素也是浮动的，那么A元素会跟随在上一个元素的后边(如果一行放不下这两个元素，那么A元素会被挤到下一行)；如果A元素上一个元素是标准流中的元素，那么A的相对垂直位置不会改变，也就是说A的顶部总是和上一个元素的底部对齐。
+
+       div的顺序是HTML代码中div的顺序决定的。
+
+       靠近页面边缘的一端是前，远离页面边缘的一端是后。
+        */
+       * {
+            padding: 0;
+            margin: 0;
+
+        }
+
+        .div1 {
+            background: red;
+            width: 300px;
+            height: 100px;
+            float: right;
+            
+        }
+
+        .div2 {
+            background: orange;
+            width: 200px;
+            height: 100px;
+            float: right;
+            clear: right;
+
+        }
+
+        .div3 {
+            background: yellow;
+            width: 200px;
+            height: 120px;
+            float: right;
+        }
+
+        .div4 {
+            background: green;
+            width: 400px;
+            height: 100px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<div class="div2"></div>
+<div class="div3"></div>
+<div class="div4"></div>
+</body>
+</html>

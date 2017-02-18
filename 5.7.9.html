@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function getRangeRandom(low, high) {
+        return Math.floor(Math.random() * (high - low) + 1) + low;
+    }
+
+    for (var i = 0; i < 100; i++) {
+        console.log(getRangeRandom(1, 9));
+    }
+
+    var arr = [];
+    var count = 0;
+
+    for (var i = 0; i < 1000; i++) {
+
+
+        for (var j = 0; j < 3; j++) {
+            var num = getRangeRandom(1, 9);
+            arr.push(num);
+
+        }
+    }
+
+
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] == 8) {
+            count++;
+        }
+
+    }
+    document.write(count / 1000);
+</script>
+</body>
+</html>

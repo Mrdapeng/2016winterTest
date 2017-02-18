@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function show(e) {
+        console.log(e);
+
+    }
+    //    var a=['a','b','c'];
+    //    a.push('d');
+    //    var c=a.join('<');
+    //    console.log(c);
+    /*pop操作返回数组最后一个元素值
+     * */
+    var a = ['a', 'b', 'c', 'd'];
+
+    //    var c=a.pop();
+    //    console.log(c);
+    //    var c = a.shift();
+    //    var resverC = a.reverse();
+    //    var c = a.push('e');
+    //    show(a[a.length - 1]);
+    //    show(c);
+    var n = [4, 5, 57, 55, 15, 66, 21, 33];
+    var sortn= n.sort(function (a,b) {
+        return a-b;
+    });
+    var sortnFina=n.sort(function (a,b) {
+        if (a ===b) {
+            return 0;
+        }
+        if (typeof a === typeof b) {
+            return a<b?-1:1;
+        }
+        return typeof a<typeof b?-1:1;
+    });
+//    show(resverC);
+    show(sortn);
+    show(sortnFina);
+    alert(typeof null==="nul");
+
+
+</script>
+</body>
+</html>

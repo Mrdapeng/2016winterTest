@@ -1,0 +1,390 @@
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Bitstream Vera Sans Mono", Consolas, Courier, monospace;
+}
+
+.header-box {
+    height: 110px;
+    /*background: #bbccff;*/
+}
+.skin-tab{
+    top: 15px;
+    position: absolute;
+    left: 800px;
+}
+.skin-tab li{
+    float: left;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    margin-right: 2px;
+    background-image: url("images/theme.gif");
+}
+.skin0 {
+    background-position: 0 0;
+}
+
+.skin1 {
+    background-position: -100px 0;
+}
+
+.skin2 {
+    background-position: -80px 0;
+}
+
+.skin3 {
+    background-position: -60px 0;
+}
+
+.skin4 {
+    background-position: -40px 0;
+}
+
+.skin5 {
+    background-position: -20px 0;
+}
+
+.skin0.selcted {
+    background-position: 0 -15px;
+}
+
+.skin1.selcted {
+    background-position: -100px -15px;
+}
+
+.skin2.selcted {
+    background-position: -80px -15px;
+}
+
+.skin3.selcted {
+    background-position: -60px -15px;
+}
+
+.skin4.selcted {
+    background-position: -40px -15px;
+}
+
+.skin5.selcted {
+    background-position: -20px -15px;
+}
+
+#skin-h2.shop-class-skin0{
+    width: 186px;
+    border: 1px solid black;
+    color: #ffffff;
+    background-color: #000;
+}
+
+#skin-h2.shop-class-skin1{
+    border: 1px solid black;
+    color: #ffffff;
+    width: 186px;
+    background-color: #D49AE1;
+
+}
+#skin-h2.shop-class-skin2{
+    width: 186px;
+    border: 1px solid black;
+    color: #ffffff;
+    background-color: #F296B2;
+
+}
+#skin-h2.shop-class-skin3{
+    border: 1px solid black;
+    color: #ffffff;
+    width: 186px;
+    background-color: #98E0E6;
+
+}
+#skin-h2.shop-class-skin4{
+    border: 1px solid black;
+    color: #ffffff;
+    width: 186px;
+    background-color: #FFCF78;
+
+}
+#skin-h2.shop-class-skin5{
+    width: 186px;
+    border: 1px solid black;
+    color: #ffffff;
+    background-color: #CDE074;
+
+}
+
+.head-top {
+    width: 990px;
+    height: 60px;
+    background: #eeeeee;
+    margin: 0 auto;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.serach {
+    left: 180px;
+    top: 20px;
+    position: absolute;
+}
+
+.head-bottom {
+    width: 990px;
+    height: 50px;
+    background: #000;
+    margin: 0 auto;
+}
+
+.head-bottom li {
+    margin-top: 12px;
+    margin-right: 5px;
+    float: left;
+}
+
+.head-bottom a {
+    font-size: 14px;
+    color: white;
+    margin-left: 5px;
+
+}
+
+.content {
+    width: 990px;
+    margin: 0 auto;
+    background: #000;
+}
+
+.side {
+    width: 180px;
+    height: 500px;
+    /*background: blue;*/
+    float: left;
+
+}
+
+.content-box {
+    height: 500px;
+    width: 786px;
+    /*background: #e38d13;*/
+    float: right;
+}
+
+.content-top {
+    width: 786px;
+    height: 320px;
+    background: #fff;
+}
+
+.content-bottom {
+    height: 180px;
+    /*background: #00A5FF;*/
+
+}
+
+.content-left {
+    width: 550px;
+    height: 320px;
+    background: pink;
+    float: left;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.content-right {
+    width: 236px;
+    height: 320px;
+    float: left;
+}
+
+.role-ad {
+    width: 550px;
+    height: 320px;
+    position: relative;
+    float: left;
+    top: 0;
+    left: 0;
+}
+
+.ad-tab {
+    width: 550px;
+    height: 40px;
+    /*background: gold;*/
+}
+
+.role-ad img {
+    top: 0;
+    left: 0;
+    width: 550px;
+    height: 320px;
+    float: left;
+    /*display: none;*/
+    position: absolute;
+}
+
+.shop-class  {
+    width: 186px;
+    border: 1px solid black;
+    color: #ffffff;
+
+}
+
+.shop-class > h2 {
+    background: #000;
+}
+
+.side h3 {
+    color: #000000;
+    height: 24px;
+    line-height: 24px;
+    margin-left: 1px;
+    border-bottom: 1px dotted black;
+}
+
+.shop-series {
+    height: 161px;
+    width: 186px;
+    border: 1px solid black;
+}
+
+.shop-series li {
+    float: left;
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+}
+
+.shop-series a {
+    color: black;
+}
+
+.shop-series ul {
+
+}
+
+.footer {
+    text-align: center;
+}
+
+.content-right img {
+    margin-left: 3px;
+}
+
+.content-right > h2 {
+    margin-top: 10px;
+    border: 1px solid #DFDFDF;
+    margin-left: 8px;
+}
+
+.content-right ul {
+    margin-top: 4px;
+    margin-left: 8px;
+    border: 1px solid #DFDFDF;
+
+}
+
+.content-right a {
+    color: #666666;
+}
+
+.news {
+    height: 76px;
+}
+
+.ad-tab li {
+    width: 100px;
+    height: 38px;
+    padding: 0 2px 0 2px;
+    margin-left: 4px;
+    margin-right: 2px;
+    float: left;
+    background: grey;
+}
+
+.ad-tab {
+    top: 280px;
+    position: absolute;
+}
+
+.ad-tab a {
+    width: 100px;
+    height: 38px;
+    color: #DFDFDF;
+    float: left;
+}
+
+.tab-box li {
+    width: 162px;
+    margin-left: 16px;
+    margin-right: 18px;
+    float: left;
+}
+
+.tab-box img {
+    height: 150px;
+    width: 166px;
+    margin-top: 8px;
+}
+
+.tab-box a {
+    color: black;
+}
+
+.tab-box span {
+    width: 167px;
+    line-height: 14px;
+    height: 14px;
+    display: block;
+    text-align: center;
+    border: 1px solid grey;
+    background: #EFEFEF;
+    font-size: 12px;
+}
+
+.uls li {
+    display: none;
+}
+
+.select {
+    background: rgb(55, 167, 215);
+}
+
+.tab-id {
+    height: 22px;
+}
+
+.tab-id ul {
+    height: 16px;
+    border: 0px;
+}
+
+.tab-id li {
+    height: 16px;
+    float: left;
+    width: 44px;
+    margin-right: 12px;
+    background: #DFDFDF;
+    margin-top: 10px;
+    text-align: center;
+}
+.tab-box{
+    height: 150px;
+}
+.tab-box div{
+    height: 150px;
+    display: none;
+}
+
+
+.tab-box .show-div{
+    display: block;
+}

@@ -20,7 +20,12 @@ for (var i = 0; i < aBigImgs.length; i++) {
     aBigImgs[i].style.zIndex = aBigImgs.length - 1;
 }
 
+/*
+*
+* 给每个小图片设置透明度，刚开始都设置成0.3，之后将第一个的设置为1，能看到，
+*
 
+* */
 for (var i = 0; i < aSmallImgs.length; i++) {
 
     aSmallImgs[i].style.opacity = 0.3;
@@ -29,7 +34,10 @@ for (var i = 0; i < aSmallImgs.length; i++) {
 }
 aSmallImgs[0].style.opacity = 1;
 aSmallImgs[0].style.filter = "alpha(opacity=100)";
-
+/*
+* 给左右二个span设置动画，鼠标划入显示，划出隐藏，
+*
+* */
 oPrev.onmouseover = oNext.onmouseover = function () {
     animate(this, {
         opacity: 100
@@ -40,6 +48,10 @@ oPrev.onmouseout = oNext.onmouseout = function () {
         opacity: 0
     });
 };
+/*
+二个按钮的点击事件是一样的，判断是哪个按钮点击的，在判断现在是否超了约定的值，
+*
+* */
 oPrev.onclick = oNext.onclick = function () {
 
     if (this == oNext) {
@@ -57,7 +69,11 @@ oPrev.onclick = oNext.onclick = function () {
 
 };
 
-
+/*
+*
+* 小图点击与大图对应，
+*
+* */
 for (var i = 0; i < aSmallImgs.length; i++) {
     aSmallImgs[i].index = i;
     aSmallImgs[i].onclick = function () {

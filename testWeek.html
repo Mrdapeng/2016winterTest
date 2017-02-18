@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var input_num = prompt("请输入0到6的数字", "");
+    var num = Number(input_num);
+
+    if (num !== 0 && num<=6) {
+        switch (num) {
+            case 1 :
+                alert("monday");
+                console.log("monday");
+                break;
+            case 2:
+                alert("tueseday");
+                break;
+            case  3:
+                alert("wednesday");
+                break;
+            case 4:
+                alert("thrusday");
+                break;
+            case 5:
+                alert("friday");
+                break;
+            case 6:
+                alert("saturday");
+                break;
+            case 7:
+                alert("sunday");
+                break;
+        }
+
+
+    } else {
+        alert("you input a not right num");
+    }
+
+    num = null;
+</script>
+
+</body>
+</html>

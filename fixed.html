@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            height: 2000px;
+        }
+        #fixed{
+            background: red;
+            width: 200px;
+            height: 200px;
+            left: 10px;
+            position: absolute;
+            
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="fixed"></div>
+<script>
+    var oDiv=document.getElementById('fixed');
+    window.onscroll=function () {
+
+        var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+        oDiv.style.top=scrollTop+500+'px';
+    };
+</script>
+</body>
+</html>

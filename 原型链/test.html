@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {name:'iceman'};
+    function fn() {
+        console.log(this);
+        console.log(this.name);
+    }
+    fn(); // this --> window
+    // obj.fn(); // Uncaught TypeError: obj.fn is not a function
+    fn.call(obj)
+</script>
+</body>
+</html>

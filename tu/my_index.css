@@ -14,6 +14,7 @@ body{
     height: 500px;
     overflow: hidden;
     margin: 50px auto;
+    /*定位*/
     position: relative;
 }
 #big-img{
@@ -24,17 +25,25 @@ body{
 #big-img img{
     width: 570px;
     height: 400px;
+    //定位相当于左上角 left和top
     position: absolute;
     top: 0;
     left: 0;
 }
 #small-img{
+    /*
+    没浮动上来一般是父元素不够宽
+    */
     width: 1130px;
     height: 100px;
     background: #cccccc;
     position: absolute;
 }
 #small-img img{
+    /*
+    padding是顺时针方向
+
+    */
     width: 130px;
     height: 80px;
     float: left;
@@ -42,6 +51,10 @@ body{
     cursor: pointer;
 }
 #info{
+    /*
+    透明度又兼容性问题 一般得写二个 liheight垂直居中
+    父元素一般是相对定位 子元素是绝对定位会释放空间 脱离文档流
+    */
     width: 560px;
     height: 30px;
     background: #000000;
@@ -60,6 +73,13 @@ body{
 
 /*noinspection CssUnknownTarget*/
 #arrows span{
+    /*
+    background-image url设置图片位置 repaet是否重复
+
+    雪碧图就是一堆小图片放在一起 就一次http请求 之后一个固定大小的div，或者其他的，通过backgdround来定位，显示特定的图片
+
+
+    */
     width: 60px;
     height: 60px;
     position: absolute;

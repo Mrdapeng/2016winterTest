@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        table {
+            border: 0;
+            border-collapse: collapse;
+        }
+
+        td {
+            font: normal 12px/17px Arial;
+            padding: 2px;
+            width: 100px;
+        }
+
+        th {
+            font: bold 12px/17px Arial;
+            text-align: left;
+            padding: 4px;
+            border-bottom: 1px solid #333;
+        }
+
+        .selected {
+            background: yellow;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th></th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>暂住地</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>张山</td>
+        <td>男</td>
+        <td>浙江宁波</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>李四</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""></td>
+        <td>王五</td>
+        <td>男</td>
+        <td>湖南长沙</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>找六</td>
+        <td>男</td>
+        <td>浙江温州</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>Rain</td>
+        <td>男</td>
+        <td>浙江杭州</td>
+    </tr>
+
+    <tr>
+        <td><input type="checkbox" name="choice" value=""/></td>
+        <td>MAXMAN</td>
+        <td>女</td>
+        <td>浙江杭州</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+<script>
+    $(function () {
+        var flag = false;
+        //设置一个标志为，当什么东西是二个状态切换时
+        $('tr').on('click', function () {
+            //某行被选中的时候，单击方法
+            if (!flag) {
+                //$(this)的是fun左面的，prop一般好用，attr容易出错，都是修改属性的。
+                $(this).addClass('selected').find(":checkbox").prop("checked", true);
+            } else {
+                $(this).removeClass('selected').find(":checkbox").prop("checked", false);
+            }
+            flag = !flag;
+        });
+
+
+    });
+</script>
+</html>

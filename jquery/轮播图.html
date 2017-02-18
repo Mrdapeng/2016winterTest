@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+        }
+        #container{
+            width: 600px;
+        }
+        #tab{
+            height: 30px;
+            background: #eeeeee;
+        }
+        #tab li{
+            float: left;
+            margin-right: 5px;
+        }
+        #tab li.selected{
+            color: red;
+        }
+        #content{
+            height: 400px;
+            padding: 20px;
+        }
+        .main{
+            display: none;
+        }
+        .selected{
+            display: block;
+        }
+        .item{
+            width: 280px;
+            height: 80px;
+            border-bottom: 1px dashed #000;
+            float: left;
+        }
+        .left{
+            float: left;
+            width:48px ;
+            height: 48px;
+            margin-right:8px;
+        }
+        .right{
+            float: left;
+            width: 224px;
+            height: 70px;
+            overflow: hidden;
+
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div id="tab">
+        <ul>
+            <li class="selected">items001</li>
+            <li>items002</li>
+            <li>items003</li>
+            <li>items004</li>
+            <li>items005</li>
+            <li>items006</li>
+        </ul>
+    </div>
+    <div id="content">
+        <div class="main selected">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题1</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题2</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题11</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦dsadadasd啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦adsadasdad啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+        <div class="main ">
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦dasfsfsfddsaf啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>adsaasdasd</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="left">
+                    <img src="1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <h2>一个标题</h2>
+                    <p>啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+<script>
+    var index = 0;
+
+    $('#tab li').on('click',function(){
+        $(this).addClass('selected').siblings().removeClass('selected');
+        $('.main').eq($(this).index()).show().siblings().hide();
+        index = $(this).index();
+    });
+    var timer = setInterval(function(){
+        index++;
+        if(index == $('#tab li').size()){
+            index = 0;
+        }
+        $('#tab li').eq(index).trigger('click');
+    },1000);
+
+    $('#content').hover(function(){
+        clearInterval(timer);
+    },function(){
+        var timer = setInterval(function(){
+            index++;
+            if(index == $('#tab li').size()){
+                index = 0;
+            }
+            $('#tab li').eq(index).trigger('click');
+        },1000);
+    });
+
+
+
+</script>
+</html>

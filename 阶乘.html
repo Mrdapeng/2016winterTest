@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var in_num = prompt("请输入字符", "");
+    function mutiply(num) {
+        return (num <= 1) ? 1 : num * mutiply(num - 1);
+
+    }
+
+    function jiecheng(num) {
+
+        item = 0;
+
+        for (var i = 1; i <= num; i++) {
+            item = item + mutiply(i);
+        }
+        return item;
+
+    }
+
+    var show_num = jiecheng(in_num);
+    document.write(show_num);
+    console.log(show_num);
+</script>
+</body>
+</html>

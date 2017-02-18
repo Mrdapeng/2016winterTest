@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <style>
+        * {
+
+            padding: 0;
+            margin: 0;
+            background: #ccc;
+
+        }
+
+        #container {
+
+            width: 1920px;
+            height: 1080px;
+        }
+        #dic{
+
+            font-size: 50px;
+        }
+        #my{
+
+
+            font-size: 50px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <span id="dic">是否是闰年</span>
+    <span id="my" href="">aaaa</span>
+</div>
+<script>
+    var strYear = prompt("请输入年份", "");
+    var strA = document.getElementById('my');
+    var bRight;
+    var nYear = new Number(strYear);
+    if (nYear != null && nYear != "") {
+        if ((nYear % 4 == 0 && (nYear % 100) != 0) || (nYear % 400 == 0)) {
+
+            alert("right");
+            bRight = true;
+        }
+        else {
+            alert("false");
+            bRight=false;
+        }
+
+    }
+    strA.innerHTML =bRight;
+    console.log(strYear);
+    nYear = null;
+
+
+</script>
+</body>
+</html>
