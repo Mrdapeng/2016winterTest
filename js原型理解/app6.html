@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function Book(title,publisher) {
+        this.title=title;
+        this.publisher=publisher;
+    }
+
+    Book.prototype.sayTitle=function () {
+
+        alert(this.title);
+    };
+
+    var book1=new Book('book1','hey1');
+    var book2=new Book('book2','hey2');
+
+    alert(book1 instanceof  Book);
+    alert(book2 instanceof  Book);
+
+
+
+
+</script>
+</html>

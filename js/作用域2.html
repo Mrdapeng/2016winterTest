@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+     * 当内部函数尝试访问其外部函数的作用域链，即在直接词法作用域之外的变量时，会创建一个闭包。 闭包包含自己的作用域链，父级的作用域链和全局作用域。
+
+     闭包不仅可以访问其外部函数中定义的变量，还可以访问外部函数的参数。
+
+     即使函数返回后，闭包也可以访问其外部函数的变量。这允许返回的函数保持对外部函数所有资源的访问。
+
+     当从函数返回内部函数时，当您尝试调用外部函数时，不会调用返回的函数。您必须首先将外部函数的调用保存在单独的变量中，然后将该变量调用为函数。考虑这个例子：*/
+//    function greet() {
+//
+//        name = "hammad";
+//        return function () {
+//
+//            console.log('hi' + name);
+//        }
+//    }
+    /*greet返回的函数保存在a中，a()立即执行*/
+
+
+//    var a = greet();
+//    a();
+    var moudle = (function () {
+
+
+        function privateFunction() {
+            var b = "private";
+
+        }
+
+        return {
+            public: function () {
+                var a = "public";
+                console.log(a);
+            }
+        }
+    })();
+    moudle.public();
+    moudle.privateFunction();
+
+</script>
+</html>

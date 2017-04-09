@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    window.firstName = "diz";
+    window.lastName = "song";
+    var myObject = {firstName: "my", lastName: "Object"};
+    function HelloName() {
+        console.log("Hello " + this.firstName + " " + this.lastName, " glad to meet you!");
+    }
+    HelloName.call(window); //huo .call(this);
+    HelloName.call(myObject);
+
+
+    function add(num1, num2) {
+        return num1 + num2;
+    }
+    console.log(add.call(window, 10, 10));
+    console.log(add.call(window, [10, 20]));
+
+    function class1() {
+
+        this.sayname = function () {
+
+            console.log('我是class1的方法');
+        }
+    }
+    function show(ele) {
+        console.log(ele);
+    }
+    function class2() {
+
+        class1.call(this);
+    }
+
+    var c2 = new class2();
+    c2.sayname();
+
+    function add(num1, num2) {
+
+        return num1 + num2;
+    }
+
+
+    function sub(num1, num2) {
+
+        return num1 - num2;
+    }
+    show(add.call(sub, 10, 20));
+
+    function show() {
+        console.log('i am show');
+    };
+
+    function hide() {
+        console.log('i am hide');
+    };
+    var hide1 = new hide();
+    show.call(hide1);
+    function caclWithoutOrder(s) {
+        return eval(s.split("").reduce(function (a, b) {
+            if ((/[+\-*]/.test(b))) {
+                return eval(a) + b
+            } else {
+                return a + b
+            }
+        }))
+    }
+
+</script>
+</html>

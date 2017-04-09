@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1" style="width: 100px; height: 100px;">
+    aaaaa
+</div>
+
+</body>
+<script>
+    var div = document.getElementById("div1");
+    var timer;
+    var i=0x1ff000;
+    function func() {
+        timer = setTimeout(func, 0);
+        div.style.backgroundColor = '#'+i.toString(16);
+        if (i++ == 0xFFFFFF) clearInterval(timer);
+        console.log(i);
+    }
+
+    timer = setTimeout(func, 0);
+</script>
+</html>

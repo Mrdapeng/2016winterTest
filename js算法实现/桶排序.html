@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    var a = [];
+    function init(len) {
+        for (var i = 0; i < len; i++) {
+            a.push(0);
+        }
+        return a;
+    }
+
+    init(10);
+    console.log(a);
+    function tong(arr) {
+        var len = arr.length;
+        for (var i = 0; i < len; i++) {
+            a[arr[i]] += 1;
+        }
+
+        return a;
+    }
+
+    function show(arr) {
+        var showarr = [];
+        for (var i = arr.length; i > 1; i--) {
+            if (arr[i] > 0) {
+                showarr.push(i);
+            }
+
+        }
+        return showarr;
+    }
+    console.log(tong([8, 6, 5, 9, 5, 3, 2]));
+
+    console.log(show(a));
+
+
+</script>
+</html>

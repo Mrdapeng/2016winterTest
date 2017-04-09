@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    *
+    *数组的sort方法会改变数组的值，不会产生副本
+    * a-b升序
+    * b-a降序
+    * */
+    var narry = [1, 11, 33, 23, 55];
+//    var temp=narry;
+    var sArry = ['orange', "pink", 'brown', 'black', 'beats', 'beta', 'webStorm'];
+    var a = sArry.sort();
+    var b = sArry.reverse();
+    var c = narry.sort(function (a, b) {
+        return a - b;
+    });
+    var d = narry.sort(function (a, b) {
+
+        return b - a;
+    });
+
+    console.log(a,b,d);
+    console.log(c);
+</script>
+</html>

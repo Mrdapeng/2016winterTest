@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function singleTon(name) {
+        this.name = name;
+        this.instance = null;
+
+    };
+
+
+    singleTon.prototype.getname = function () {
+
+        alert(this.name);
+
+    }
+
+
+    singleTon.prototype.getinstance = function (name) {
+        if (!this.instance) {
+            this.instance = new singleTon(name);
+        }
+
+        return this.instance;
+    }
+
+
+    var a = singleTon('a');
+    var a1 = singleTon('a1');
+    alert(a===a1);
+
+var arr=[5,6,8,9,3];
+alert(Math.min.apply(null,arr));
+</script>
+</html>

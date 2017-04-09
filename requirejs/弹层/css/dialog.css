@@ -1,0 +1,124 @@
+/*body {*/
+/*//8px的外边距*/
+/*margin: 0;*/
+/*}*/
+
+/*html, body {*/
+/*width: 100%;*/
+/*height: 100%;*/
+/*}*/
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background: rgba(0,0,0,0.5);*/
+    background: #000;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.dialog{
+    background:white;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    margin-left: -200px;
+    margin-top: -150px;
+}
+.header{
+    /*width: 400px;*/
+    height: 36px;
+    background: grey;
+}
+.title{
+    line-height: 36px;
+    float: left;
+    height: 36px;
+    font-size: 30px;
+
+}
+.close{
+    height: 36px;
+    line-height: 36px;
+    font-size: 28px;
+    float: right;
+    cursor: pointer;
+}
+
+/*@keyframes anim {*/
+
+    /*0% {*/
+        /*background: red;*/
+        /*left: 0;*/
+        /*top: 0;*/
+    /*}*/
+    /*25%{*/
+        /*background: greenyellow;*/
+        /*top: 280px;*/
+        /*height: 130px;*/
+        /*left: 200px;*/
+    /*}*/
+    /*50%{*/
+        /*left: 40px;*/
+        /*background: gray;*/
+        /*top: 20px;*/
+        /*height: 50px;*/
+    /*}*/
+    /*75%{*/
+        /*background: hotpink;*/
+        /*top: 600px;*/
+        /*width: 55px;*/
+        /*left: -20px;*/
+    /*}*/
+    /*100%{*/
+        /*left: 300px;*/
+        /*background: darkturquoise;*/
+        /*top: 300px;*/
+        /*height: 100px;*/
+    /*}*/
+
+/*}*/
+/*-webkt-@keyframes anim {*/
+
+           /*0% {*/
+               /*background: red;*/
+               /*left: 0;*/
+               /*top: 0;*/
+           /*}*/
+           /*25%{*/
+               /*background: greenyellow;*/
+               /*top: 200px;*/
+               /*height: 200px;*/
+           /*}*/
+           /*50%{*/
+               /*background: gray;*/
+               /*top: 20px;*/
+               /*height: 50px;*/
+           /*}*/
+           /*75%{*/
+               /*background: hotpink;*/
+               /*top: 40px;*/
+               /*width: 55px;*/
+           /*}*/
+           /*100%{*/
+               /*background: darkturquoise;*/
+               /*top: 300px;*/
+               /*height: 100px;*/
+           /*}*/
+       /*}*/
+/*.dialog {*/
+    /*animation: anim 5s infinite alternate;*/
+    /*-webkit-animation: anim 5s infinite alternate;*/
+
+/*}*/

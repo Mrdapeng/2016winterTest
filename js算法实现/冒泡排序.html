@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //    function babbleSort(arr) {
+    //        var len = arr.length, j;
+    //        var temp;
+    //        while (len > 0) {
+    //
+    //            for (var j = 0; j < len - 1; j++) {
+    //
+    //                if (arr[j] > arr[j + 1]) {
+    //                    temp = arr[j];
+    //                    arr[j] = arr[j + 1];
+    //                    arr[j + 1] = temp;
+    //                }
+    //
+    //            }
+    //            len--;
+    //
+    //        }
+    //
+    //        return arr;
+    //
+    //    }
+    //
+    //
+    //    console.log(babbleSort([8,6,9,2,6,3,1]));
+    function bableSort(arr) {
+
+        var len = arr.length, j;
+        var temp;
+        while (len > 0) {
+
+            for (var j = 0; j < len - 1; j++) {
+
+                if (arr[j] > arr[j + 1]) {
+                    temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+
+                }
+
+
+            }
+            len--;
+        }
+        return arr;
+    }
+    console.log(bableSort([8,6,9,2,6,3,1]));
+</script>
+</html>

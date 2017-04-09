@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function finatal(num) {
+        if (num === 1) {
+            return 1;
+        } else {
+            return num * finatal(num - 1);
+        }
+
+    }
+
+    function finatalAdd(num) {
+        if (num === 1) {
+            return 1;
+        } else {
+            return finatal(num) + finatal(num - 1);
+        }
+    }
+
+
+    console.log(finatalAdd(6));
+
+</script>
+</html>

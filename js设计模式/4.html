@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var student = {
+        name: 'stu',
+        say: function () {
+            console.log('i can study');
+        }
+    };
+    var teacher = {
+        name: 'tech',
+        say: function () {
+            console.log('i can teach');
+        }
+    };
+
+    var checkPeople = function (people) {
+        var peoples = [];
+        if (people && typeof people.say === 'function') {
+            console.log('you are a people');
+            console.log(people .name);
+            peoples.push(people);
+        } else {
+            console.log('you are not a  people');
+        }
+    };
+
+    checkPeople(student);
+    checkPeople(teacher);
+</script>
+</html>

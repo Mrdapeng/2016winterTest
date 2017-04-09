@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.12.4.js"></script>
+</head>
+<body>
+<input type="button" id="send" value="AJAX GET">
+<div class="comment">评论</div>
+<div id="resText"></div>
+</body>
+
+<script>
+    $(function () {
+        $('#send').on('click',function () {
+            $('#resText').load('1.html .me');
+        })
+    })
+</script>
+</html>

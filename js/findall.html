@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function findAll(arr, x) {
+        var newarr = [];
+        var count = 0;
+        for (var i = 0; i < arr.length; i++) {
+
+            if (arr[i] == x) {
+
+                count++;
+
+            }
+
+        }
+
+        return count;
+    }
+    console.log(findAll([8, 8, 8], 8));
+
+    function findAll2(arr, x) {
+
+        var results = [];
+        var length = arr.length;
+        var pos = 0;
+        while (pos < len) {
+            pos = arr.indexOf(x, pos);
+            if (pos === -1) break;
+            results.push(pos);
+            return results;
+        }
+    }
+    console.log(Function);
+    var isarr = Function.isArr() || function (o) {
+            return typeof  o === "object" && Object.prototype.toString().call(o) === "[object Array]";
+
+        }
+</script>
+</html>

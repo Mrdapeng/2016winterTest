@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #main {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            list-style: none;
+            height: 30px;
+            margin: 10px;
+            line-height: 30;
+            padding: 10px;
+        }
+
+        span {
+            float: right;
+        }
+
+        .green {
+            background: green;
+        }
+
+        .red {
+            background: red;
+        }
+
+
+    </style>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="main">
+    <h1>services</h1>
+    <ul>
+        <li v-for="item in items":class="{red:item.active,green:!item.active}" @click="item.active=!item.active"></li>
+    </ul>
+    total:<span>{{total() |curre}}</span>
+
+    <script>
+        var vm = new Vue({
+
+
+            el: "#app",
+            data: {
+                items: [
+                    {name: 'aaaa', price: 1111, active: false},
+                    {name: 'bbbb', price: 1111, active: false},
+                    {name: 'cccc', price: 1111, active: false},
+                    {name: 'dddd', price: 1111, active: false},
+
+
+                ]
+
+            },
+            methods:{
+
+
+
+            }
+        })
+    </script>
+</div>
+</body>
+</html>

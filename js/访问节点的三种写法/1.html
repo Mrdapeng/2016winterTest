@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+<script>
+    function slow() {
+
+        var nodelist = document.getElementsByTagName('div');
+        var len = nodelist.length;
+        var name = '';
+        for (var i = 0; i < len; i++) {
+            name = document.getElementsByClassName('div')[i].nodeType;
+            name = document.getElementsByClassName('div')[i].nodeName;
+            name = document.getElementsByClassName('div')[i].tagName;
+
+
+        }
+        return name;
+    }
+
+
+    function fast() {
+        var nodeList = document.getElementsByTagName('div');
+        var len = nodeList.length;
+        var name = '';
+        for (var i = 0; i < len; i++) {
+            name = nodeList[i].nodeName;
+            name = nodeList[i].nodeType;
+            name = nodeList[i].tagName;
+
+
+        }
+        return name;
+    };
+
+    function fastest() {
+
+        var nodelist = document.getElementsByTagName('div'),
+            len = nodelist.length,
+            name = '';
+        var el = null;
+        for (var i = 0; i < len; i++) {
+            el = nodelist[i];
+            name = el.nodeName;
+            name = el.nodeType;
+            name = el.tagName;
+
+        }
+        return name;
+
+
+    }
+
+
+    function testNextNode() {
+
+        var el = document.getElementById('mydiv'),
+            ch = el.firstChild,
+            name = '';
+
+
+        do {
+            name = ch.nodeName;
+
+        } while (ch = ch.nextSibling);
+
+
+        return name;
+    };
+    function testChildsNodes() {
+
+        var el = document.getElementById('mydiv'),
+            ch = el.childNodes,
+            len = ch.length,
+            name = '';
+
+
+        for (var i = 0; i < len; i++) {
+            name = ch[i].nodeName;
+
+        }
+
+        return name;
+    }
+
+
+    function myselect() {
+
+
+        var errs = [],
+            divs = document.getElementsByTagName('div'),
+            classname = '';
+        for (var len = 0; len < divs.length; len++) {
+            classname = divs[i].className;
+            if (classname === 'notice' && classname === 'warning') {
+
+                errs.push(divs[i]);
+
+            }
+
+        }
+
+    }
+
+
+    var el = document.getElementById('mydiv');
+    //    四次访问dom结构，并且最坏情况下会发生三次重排布效率低下
+
+    el.style.borderLeft = '1px';
+    el.style.borderRight = '1px';
+    el.style.padding = '1px';
+    //优化写法 只进行一次重排
+
+    el.style.cssText = 'border-right:1px;border-left=2px;padding:5px;';
+
+    var data = [
+
+
+        {
+            'name': 'nico',
+            'url': 'www.cool.com'
+
+        }, {
+
+            "name": 'ocin',
+            'url': 'www.ocin.com'
+        }
+    ];
+    function appendDataElement(appendtoElement, data) {
+
+        var a, li;
+        for (var i = 0, max = data.length; i < max; i++) {
+            a = document.createElement('a');
+            a.href = data[i].url;
+            a.appendChild(document.createTextNode(data[i].name));
+            li = document.createElement('li');
+            li.appendChild(a);
+            appendtoElement.appendChild(li);
+
+        }
+
+    }
+
+    var fragment = document.createDocumentFragment();
+    appendDataElement(fragment, data);
+    document.getElementById('mylist').appendChild(fragment);
+
+</script>
+</html>

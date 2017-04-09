@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <span>{{value}}</span>
+    <br>
+    <input v-bind:value="value">
+    <input type="text" value="{{value}}">
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+            value:"aaaa"
+            },
+        })
+    </script>
+</div>
+</body>
+</html>

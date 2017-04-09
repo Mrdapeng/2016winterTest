@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var duck = {
+        name: 'duck',
+        sing: function () {
+            console.log(' i can sing')
+        }
+    };
+    var chicken = {
+        name: 'chicken',
+        sing: function () {
+            console.log(' i can sing')
+
+        }
+    };
+    var cat = {
+        name: 'name',
+        miao: function () {
+            console.log('i am cat');
+        }
+    };
+
+    var join = [];
+
+    var joinus = function (animal) {
+        if (animal && typeof animal.sing === 'function') {
+            join.push(animal);
+            console.log('you are join it');
+        } else {
+            console.log('you are not allow join it');
+
+        }
+
+
+    };
+
+
+    joinus(chicken);
+    joinus(duck);
+    joinus(cat);
+
+</script>
+</html>

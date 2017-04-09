@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function A(){
+        this.flag='a';
+        this.tip=function () {
+            alert(this.flag);
+
+        };
+    }
+    function B() {
+        this.flag='b';
+    }
+
+    var a=new A();
+    var b=new  B();
+    a.tip.call(b);
+    a.tip.apply(b);
+
+
+</script>
+</html>

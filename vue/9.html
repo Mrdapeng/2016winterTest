@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <div v-bind:style="style1">aaa</div>
+    <div v-bind:style="style2">aaa</div>
+    <div v-bind:style="style3">aaa</div>
+    <button v-on:click="click">button</button>
+    <button v-on:click="show">show</button>
+    <p>{{showTime}}</p>
+</div>
+<script>
+
+    var App = new Vue({
+        el: "#app",
+        data: {
+            style1: {
+                background: 'red'
+            },
+            style2: {
+                background: 'blue'
+            }, style3: {
+                background: 'green'
+            },
+            showTime: '' + new Date
+
+
+        },
+        methods: {
+            click: function (event) {
+                console.log(event.target.tagName);
+            },
+            show: function () {
+                setInterval(function () {
+                    return '' + new Date();
+                }, 1000)
+                console.log('' + new Date());
+
+            }
+        }
+
+
+    });
+</script>
+</body>
+</html>

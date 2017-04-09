@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <p>单个复选框:</p>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{checked}}</label>
+    <input type="checkbox" id="xiaoming" value="xiaoming" v-model="checkedname">
+    <label for="xiaoming">xiaoming</label>
+    <input type="checkbox" id="xiaoming2" value="xiaoming2" v-model="checkedname">
+    <label for="xiaoming2">xiaoming2</label>
+    <input type="checkbox" id="xiaoming3" value="xiaoming3" v-model="checkedname">
+    <label for="xiaoming3">xiaoming3</label>
+    <span>{{checkedname}}</span>
+    <br>
+    <span v-for="item in checkedname">{{item}}</span>
+    <input type="radio" id="male" value="male" v-model="sex">
+    <label for="male">male</label>
+    <input type="radio" id="fmale" value="fmale" v-model="sex">
+    <label for="fmale">fmale</label>
+    <span>{{sex}}</span>
+    <select  v-model="selected" name="website" id="">
+        <option value=""> 选择一个网站</opton>
+        <option value="http://www.baidu.com">baidu</option>
+        <option value="http://www.google.com">google</option>
+    </select>
+    <span>{{selected}}</span>
+</div>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            checked: false,
+            checkedname: [],
+            sex: "male",
+            selected:''
+
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-bind:style="divstyle"></div>
+    <button v-on:click="fn">button</button>
+</div>
+</body>
+<script>
+    var flag = true;
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            divstyle: {
+                witdth: '300px',
+                height: '100px',
+                background: 'red',
+                display: 'block'
+            },
+            flag: true
+        },
+        methods:{
+            fn:function () {
+                if (flag){
+                    this.divstyle.display='none'
+                }else{
+                    this.divstyle.display='block'
+                }
+                flag=!flag;
+            }
+        }
+
+
+    });
+
+</script>
+</html>

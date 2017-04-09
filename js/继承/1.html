@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*实际上，虽然 JavaScript 的对象最初都是由 Object.prototype 对象克隆而来的，但对象构造
+     器的原型并不仅限于 Object.prototype 上，而是可以动态指向其他对象。这样一来，当对象 a 需
+     要借用对象 b 的能力时，可以有选择性地把对象 a 的构造器的原型指向对象 b ，从而达到继承的
+     效果。下面的代码是我们最常用的原型继承方式：*/
+
+
+    //    var obj = {name: 'sven'};
+    //
+    //    var A = function () {
+    //    };
+    //    A.prototype = obj;
+    //    var a = new A();
+    //    console.log(a.name);
+    //    /* 首先，尝试遍历对象 a 中的所有属性，但没有找到 name 这个属性。
+    //       查找 name 属性的这个请求被委托给对象 a 的构造器的原型，它被 a. __proto__ 记录着并且
+    //     指向 A.prototype ，而 A.prototype 被设置为对象 obj 。
+    //       在对象 obj 中找到了 name 属性，并返回它的值。*/
+
+
+    var A = function () {
+    };
+    A.prototype = {name: 'seven'};
+    var B = function () {
+    };
+    B.prototype = new A();
+    var b = new B();
+    console.log(b.name);
+
+
+    var Animal = function () {
+
+    };
+    Animal.prototype = {
+        sound: function () {
+            console.log('i can sound');
+        }
+    };
+    var Monkey = function () {
+    };
+    //    Monkey.prototype = new Animal();
+    Monkey.prototype = {
+        sound: function () {
+            console.log('i can sound');
+        }
+    }
+
+    var monkey = new Monkey();
+    monkey.sound();
+    /*es6写法*/
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+
+        getName() {
+            return this.name;
+
+        }
+    }
+
+    class Dog extends Animal {
+        constructor(name) {
+            super(name);
+        }
+        speak() {
+            return "woof";
+        }
+    }
+</script>
+</html>

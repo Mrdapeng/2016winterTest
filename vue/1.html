@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <!--{{massage}}-->
+    <input type="text" v-model="message">
+    <div v-html="message">
+
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm=new Vue({
+        el:'#app',
+        data:{
+            message:'<p>pppp</p>'
+        }
+    });
+</script>
+</body>
+</html>

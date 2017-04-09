@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var data = {a: 1, b: 2, c: 3, d: 4};
+//    console.log(data);
+//    var show_arr = [];
+//    function showgt2(arr) {
+//        for (var i = 0; i < arr.length; i++) {
+//            if (arr[i] > 2) {
+//                show_arr.push(arr[i]);
+//            }else {
+//                continue;
+//            }
+//        }
+//
+//        return show_arr;
+//    }
+//
+//    showgt2(data);
+    var data = {a: 1, b: 2, c: 3, d: 4};
+    Object.keys(data).filter(function(x) { return data[x]>2});
+</script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //全局作用域
+    /*上面我们了解了作用域和上下文，为了消除混乱，特别需要注意的是，执行期上下文中的上下文这个词语是指作用域而不是上下文。这是一个奇怪的命名约定，但由于JavaScipt规范，我们必须链接他们这间的联系。
+
+     JavaScript是一种单线程语言，因此它一次只能执行一个任务。其余的任务在执行期上下文中排队。正如我刚才所说，当 JavaScript 解释器开始执行代码时，上下文（作用域）默认设置为全局。这个全局上下文附加到执行期上下文中，实际上是启动执行期上下文的第一个上下文。
+
+     之后，每个函数调用（启用）将其上下文附加到执行期上下文中。当另一个函数在该函数或其他地方被调用时，会发生同样的事情。
+     */
+    var name = "global";
+    function show() {
+        var anotherName = "dddd";
+        name = "cccc";
+        console.log(name);
+
+
+    }
+    //块语句，如 if 和 switch 条件语句或 for 和 while 循环语句，不像函数，它们不会创建一个新的作用域。在块语句中定义的变量将保留在它们已经存在的作用域中。
+    /*现在的作用域是全局 不会新创建一个作用域*/
+    /*
+     * let和const拥有块级作用域*/
+    if (true) {
+
+        var secondName = "eeee";
+        let likes = 'ffff';
+        const say = "say";
+    }
+    show();
+    console.log(name);
+    //    console.log(likes);
+    //    console.log(say);
+
+    //console.log(anotherName);
+
+
+    console.log(secondName);
+    (function logFunction() {
+        name = "aaa";
+        console.log(this.name);
+    })();
+    //    logFunction();
+
+    /* 作用域(scope) 和 上下文(context)，很多误解为它们是相同的概念。但事实并非如此。作用域(scope)我们上面已经讨论过了，而上下文(context)是用来指定代码某些特定部分中  this 的值。作用域(scope) 是指变量的可访问性，上下文(context)是指 this 在同一作用域内的值。我们也可以使用函数方法来改变上下文*/
+</script>
+</html>

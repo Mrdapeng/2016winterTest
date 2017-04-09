@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-1.12.4.js"></script>
+</head>
+<body>
+<div class="log"></div>
+</body>
+<script>
+    var object = {
+        land: 500,
+        banana: {
+            weight: 50,
+            price: 40
+        },
+        date: "2017.2.19"
+    };
+
+    var object1 = {
+        land: 300,
+        banana: {
+            weight: 60,
+            price: 30
+        },
+        date: "2017.2.19"
+    };
+    $(function () {
+
+        $.extend(object, object1);
+        $('.log').append(JSON.stringify(object1));
+    });
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+$color:#eee;
+$fontsize:20px;
+$fontsize:12px !default;
+$class:red;
+$bodder:1px solid #fff;
+body{
+  width: 100%;
+  #container{
+    background: #fff;
+  }
+  
+}
+.main{
+  height: 200px;
+  color: $color;
+  font-size: $font;
+  padding:10px 0 20px 0;
+  &:hover{
+    color: #CCCCCC;
+  }
+}
+.#($class){
+}
+@mixin border ($color,$bodder){
+  border: $bodder solid $color;
+  box-shadow: 2px 3px 3px #eee;
+}
+.header{
+  width: 200px;
+  height: 300px;
+  @include border(#888,5px);
+  border: 2px solid #ffffff;
+}

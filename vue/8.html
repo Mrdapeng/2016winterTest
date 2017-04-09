@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+
+<div id="app">
+    <div v-bind:style="styleObject">aaaaaa</div>
+    <div v-bind:style="s1">aaaaaa</div>
+    <div v-bind:style="s2">aaaaaa</div>
+
+</div>
+<script>
+    var a = new Vue({
+        el: "#app",
+        data: {
+            styleObject: {
+                color: "red",
+                fontSize: '20px'
+            },
+            s1: {
+                color: 'red'
+            },
+            s2: {
+                fontSize: "19px"
+            }
+
+        }
+
+
+    });
+
+</script>
+</body>
+</html>

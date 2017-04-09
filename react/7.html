@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pretty {
+            color: #4cae4c;
+
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+
+</div>
+<script src="react-15.3.1/build/react.js"></script>
+<script src="react-15.3.1/build/react-dom.js"></script>
+<script>/*用  ReactDOM.render进行渲染
+ */
+
+var compent = React.createClass({
+    render: function () {
+        return React.DOM.span(null, 'hehe' + this.props.name);
+
+        console.log(Object.isFrozen(this.props) === true);
+    }
+});
+
+var compent2 = React.createClass({
+    proTypes: {
+        name: React.PropTypes.string.isRequired,
+    },
+    render: function () {
+        return React.DOM.span(null, 'my name is ' + this.props.name)
+    }
+})
+
+var nameCompent = React.createClass({
+    propType: {
+        firstname: React.PropTypes.string.isRequired,
+        middlename: React.PropTypes.string.isRequired,
+
+    },
+    getDefalutProps:function () {
+
+        return {
+            middlename:'',
+            adress:'n/a'
+        }
+    },
+    render:function () {
+        /**/
+    }
+})
+
+var alotcompent = React.createFactory(compent);
+
+ReactDOM.render(
+//        React.DOM.h1({id:'first'},
+//            '就不是hello world'
+//        ),document.getElementById('app')
+
+    React.DOM.h1({id: 'h1'},
+        React.DOM.span(null, React.DOM.em(null, 'hell'), "o"),
+        "world",
+        React.DOM.p(null, React.DOM.span({className: 'pretty'}, "this is qiantao"), 'hehe'),
+        React.createElement(compent, {name: 'this is my compent'}),
+        alotcompent(),
+        React.createElement(compent2, {name: 'aa'})
+    ), document.getElementById('app')
+);
+
+console.log(React.DOM);
+</script>
+</body>
+</html>

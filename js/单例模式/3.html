@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button id="btn">btn</button>
+
+</body>
+
+<script>
+    var createLayer = (function () {
+        var div;
+
+        return function () {
+
+            if (!div) {
+
+                div = document.createElement('div');
+                div.innerHTML = 'login window';
+                div.style.display = 'none';
+                div.style.width = '200px';
+                div.style.height = '200px';
+                div.style.backgroundColor = '#eee';
+                document.body.appendChild(div);
+            }
+            return div;
+        }
+    })();
+    var btn = document.getElementById('btn');
+    btn.onclick = function () {
+
+
+        var login = createLayer();
+        login.style.display = 'block';
+
+    }
+
+</script>
+</html>

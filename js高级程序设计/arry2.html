@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    Array.prototype.reduce=function (f,value) {
+        var i;
+        for ( i = 0; i < this.length; i++) {
+            value=f(this[i],value);
+        }
+        return value;
+    }
+
+    var data=[4,8,5,3,9,13];
+    var add=function (a,b) {
+
+        return a+b;
+    }
+    var mult=function (a,b) {
+
+        return a*b;
+    }
+    var sum=data.reduce(add,0);
+    var mult_result=data.reduce(mult,1);
+    console.log(sum);
+    console.log(mult_result);
+
+    data.showsum=function () {
+        return this.reduce(add,0);
+    }
+  var show_sum=data.showsum();
+    console.log(show_sum);
+
+</script>
+</html>

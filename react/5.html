@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="cotent"></div>
+<script src="react-15.3.1/build/react.js"></script>
+<script src="react-15.3.1/build/react-dom.js"></script>
+
+<script type="text/jsx">
+    var CommentBox = React.createClass({
+        render: function () {
+            return (
+                    <div className="commentBox">
+                        i am a CommentBox
+                    </div>
+            );
+        }
+
+    });
+
+    ReactDom.render(
+        <CommentBox/>,
+        document.getElementById('content')
+    )
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="build/react.js"></script>
+    <script src="build/react-dom.js"></script>
+</head>
+<body>
+<div id="app"></div>
+
+
+</body>
+<script>
+    var mycompent = React.createClass(
+        {
+            render: function () {
+                return React.DOM.p({name: React.PropTypes.string.isRequired}, "this is say" + this.props.say + this.props.id);
+            }
+        }
+    );
+    var textarencounter = React.createClass({
+
+            proTypes: {
+                text: React.PropTypes.string
+            },
+            getDefaultProps: function () {
+                return {text: ''};
+            },
+            getInitialState: function () {
+
+                return {
+                    text: this.props.text
+                }
+            },
+            _textchange: function (ev) {
+
+                this.setState({
+                    text: ev.target.value,
+                });
+
+            },
+
+            render: function () {
+                return React.DOM.div(
+                    null, React.DOM.textarea({
+                        value: this.state.text,
+                        onChange: this._textchange,
+
+
+                    }),
+                    React.DOM.h3(null, this.state.text.length)
+                )
+            }
+        }
+    );
+
+    ReactDOM.render(
+        React.DOM.h2({id: 'h2'},
+            React.DOM.span(null, "aaaaa"), "bbbb",
+            React.createElement(mycompent, {id: "my", say: 'aaaz', name: 'aaa'}),
+            React.createElement('p', null, "h4444444"),
+            React.createElement(textarencounter, {text: "aaaa"})
+        ), document.getElementById('app')
+    );
+
+
+    console.log(React.DOM);
+    console.log(React.PropTypes);
+
+</script>
+</html>

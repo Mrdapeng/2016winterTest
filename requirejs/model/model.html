@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //    var model = new Object({
+    //
+    //        opt: "opt",
+    //        fun1: function () {
+    ////            console.log(this);
+    //            return "fun1";
+    //        },
+    //        fun2: function () {
+    //            console.log(this);
+    //        }
+    //
+    //    });
+    //
+    //    var model1 = {
+    //
+    //        opt: "aa",
+    //        fun1: function () {
+    //            console.log(this);
+    //        },
+    //        fun2: function () {
+    //            console.log(this);
+    //        }
+    //
+    //    };
+    //    model.opt = "bb";
+    //    model1.fun1();
+    //    console.log(model.opt);
+    /*
+     * 函数立即执行体，()();
+     *  不会暴露私有成员和变量，但是可以通过rerurn{
+     *
+     *  xx：xx,
+     *  xxx:function xxx(){
+     *  }
+     *
+     *  }
+     *
+     * */
+    var moudele = (function () {
+
+        var count = 0;
+        var m1 = function () {
+
+        };
+        var m2 = function () {
+
+        };
+
+        return {
+            m1: m1,
+            m2: m2,
+            count: count
+        };
+    })();
+    console.log(moudele.count);
+
+</script>
+</html>

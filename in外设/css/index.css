@@ -1,0 +1,20 @@
+#nav{
+    width: 80%;
+
+}
+
+#toolbar{
+
+    background: cadetblue;
+}
+#toolbar .icon{
+
+    display: inline-block;
+    font-size: 50px;
+    float: left;
+
+}
+#big-icon span {
+    font-size: 100px;
+    background: #5aa2d7;
+}

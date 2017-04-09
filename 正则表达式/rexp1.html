@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    //    var str1="ccccc";
+    //    var rexp1=/^c/;
+    //    console.log(rexp1.exec(str1));
+    //
+    //    var str2="abc123";
+    //    var rexp2=/.[A-z].[0-9].+/;
+    //    console.log(rexp2.exec(str2));
+    //    var str3 = "cccCCC";
+    //    var rexp3 = /c{3}ig/;
+    //    console.log(rexp3.exec(str3));
+    //    var str4 = "ccccc";
+    //    var regx4 = /c{1,}?/;
+    //    console.log(regx4.exec(str4));
+    //    function repexec(str, rexp) {
+    //        var str = str;
+    //        var rexp = rexp;
+    //        var result = rexp.exec(str);
+    //        console.log(result);
+    //    }
+    //
+    //    var str5 = "caaaa";
+    //    var regx5 = /^c/;
+    //    var str6 = "caaaac";
+    //    var regx6 = /c$/;
+    //    repexec(str5,regx5);
+    //    repexec(str6, regx6);
+    //
+    //
+    //    var str7="blueidea.com";
+    //    var rexg7=/.+/;
+    //    repexec(str7,rexg7);
+    //    var str8="bc.com";
+    //    var regx8=/^(b|c).+/;
+    //    repexec(str8,regx8);
+    //var str1="ac123456abc";
+    //var regx=/[A-z][A-z][1-9].+/;
+    //console.log(regx.exec(str1));
+    //var str="woow";
+    //var regex2=/(\w)(\w)\2\1/;
+    //console.log(regex2.exec(str));
+    //var strt1="30CAoo40";
+    //var rexgt1=/\d+$/;
+    //console.log(rexgt1.exec(strt1));
+    var str9 = "   蓝    色  梦   想 ";
+    var regex9 = /\s+/g;
+    str9 = str9.replace(regex9, " ");
+    document.write(str9);
+    function isdigt(str) {
+        var reg = /^\d*$/;
+        return reg.test(str);
+
+
+    }
+    var a = isdigt("12345564548as4d8as");
+    console.log(a);
+    function phonenumber(str) {
+        var reg=/^0*(13|18|15)\d{}/
+    }
+    var c="cccccc222222ssssscccc";
+    var regc="/c./"
+</script>
+</html>

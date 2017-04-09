@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function yunsuan(str) {
+
+        var newarr = [];
+        var result = 0;
+        var numArr = [];
+        var newsuanfu = [];
+        var strlength = str.length;
+
+        for (var i = 0; i < str.length; i++) {
+            newarr.push(str[i]);
+        }
+        for (var i = 0; i < newarr.length; i++) {
+
+            if (newarr[i].charCodeAt() > 96 && newarr[i].charCodeAt() < 105) {
+                numArr.push(parseInt(newarr[i]));
+            } else if (newarr[i].charCodeAt() == 56 || newarr.charCodeAt() == 16 || newarr[i].charCodeAt() == 9) {
+                newsuanfu.push(newarr[i]);
+            }
+        }
+
+
+        for (var i = strlength; i > 0; i--) {
+
+            var exp = numArr[i] + newsuanfu[i];
+
+
+        }
+
+//        for (var i = 0; i < strlength; i++) {
+//            if (newarr[i].charCodeAt() > 96 && newarr[i].charCodeAt() < 105) {
+//                exp += newarr[i];
+//            } else if (newarr[i].charCodeAt() == 56 || newarr.charCodeAt() == 16 || newarr[i].charCodeAt() == 9) {
+//                exp += newarr[i];
+//            }
+//
+//
+//        }
+    }
+
+    function now() {
+        var arr = [];
+
+    }
+
+
+    function check(w, x, y, z) {
+        var newarr = new Set();
+        var max = Math.max(w, x, y, z);
+        var min = Math.max(w, x, y, z);
+        for (var i = min; i <= max; i++) {
+            newarr.push(i);
+        }
+
+        return newarr.length;
+
+    }
+</script>
+</html>

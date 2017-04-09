@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function User(login) {
+        this.login = login;
+        this.sayHi = function() {
+            console.log(this.login);
+        }
+    }
+    var user = new User('John');
+    setTimeout(user.sayHi, 1000);
+</script>
+</body>
+</html>

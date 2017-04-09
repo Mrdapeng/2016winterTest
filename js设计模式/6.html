@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="start">start</button>
+<button id="stop"></button>
+</body>
+
+<script>
+    /*命令模式*/
+
+
+    var tv = {
+
+        open: function () {
+            console.log('打开电视');
+        },
+        close: function () {
+            console.log('关闭电视');
+
+        }
+    }
+    var opencommend = function (receiver) {
+        this.recevier = receiver;
+
+    };
+
+    opencommend.prototype.execute=function () {
+        this.recevier.open();
+
+    }
+    opencommend.prototype.undo=function () {
+        this.recevier.close();
+
+    }
+</script>
+</html>

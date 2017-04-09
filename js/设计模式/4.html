@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+
+    var A = function (name) {
+        this.name = name;
+    };
+    var B = function () {
+        A.apply(this, arguments);
+    };
+    B.prototype.getName = function () {
+        return this.name;
+    };
+    var b = new B('sven');
+    console.log(b.getName()); // 输出： 'sven'
+
+    (function () {
+        var a = Math.min(arguments.toString());
+        console.log(arguments);
+        console.log(a);
+    })(1, 26, 9);
+    //console.log(null==undefined);
+    //console.log(null=='');
+    //console.log(undefined=='');
+</script>
+</html>

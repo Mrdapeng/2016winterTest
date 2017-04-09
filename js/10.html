@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //    //    var obj ={a:1,b:function () {alert(this.a)}}; var fun =obj.b; fun();
+    //    //    console.log(fun)
+    //    var msg = 'hello';
+    //    function show() {
+    //
+    //        for (var i = 0; i < 10; i++) {
+    //            var msg = 'hello' + i * 2 + i;
+    //        }
+    //    }
+    //
+    //    show();
+    //    console.log(parseInt('123ab'));
+    //    alert(3+4+'2' );
+    function test() {
+
+        var n = 4399;
+
+        function add() {
+            n++;
+            console.log(n);
+        }
+
+        return {
+            n: n,
+            add: add
+    }
+    }
+    var res1 = test();
+    var res2 = test();
+    res1.add();
+    res2.add();
+    console.log(res1.n)
+    res2.add();
+
+</script>
+</html>

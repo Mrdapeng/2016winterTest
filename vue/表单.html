@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <input type="text" v-model="message" placeholder="请输入">
+    <p>{{message}}</p>
+    <p >{{message2}}</p>
+    <textarea v-model="message2" placeholder="请输入"></textarea>
+</div>
+<script>
+    new Vue({
+        el:"#app",
+        data:{
+            message:'lrp',
+            message2:'lrp6'
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+    var monhlyCost = 0;
+    var cost = function (money) {
+        monhlyCost += money;
+    };
+    cost(100);
+    cost(200);
+    cost(300);
+    cost(700);
+
+    var cost = function () {
+
+        var args = [];
+
+        return function () {
+
+            if (arguments.length === 0) {
+                var money = 0;
+                for (var i = 0; i < args.length; i++) {
+
+                 money+=args[i];
+
+                }
+                return money;
+            }else{
+                [].push.apply(args,arguments);
+                return arguments.callee;
+            }
+
+
+
+        }
+
+    }
+
+
+</script>
+</html>

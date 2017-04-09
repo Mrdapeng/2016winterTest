@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*
+    * 是插入事件队列，按延迟时间执行。*/
+//    var intervalId, timeoutId;
+//
+//    timeoutId = setTimeout(function () {
+//        console.log(1);
+//    }, 300);
+//
+//    setTimeout(function () {
+//        clearTimeout(timeoutId);
+//        console.log(2);
+//    }, 100);
+//
+//    setTimeout('console.log("5")', 400);
+//
+//    intervalId = setInterval(function () {
+//        console.log(4);
+//        clearInterval(intervalId);
+//    }, 200);
+//    setTimeout(function () {
+//        console.log('timeout');
+//    }, 1000);
+//
+//    setInterval(function () {
+//        console.log('interval')
+//    }, 1000);
+//    var t = true;
+    for (var i = 0; i < 5; i++) {
+        setTimeout(function () {
+            console.log(i+'aa');
+        }, 0);
+    }
+
+    //
+//    setTimeout(function(){
+//        t = false;
+//    }, 1000);
+//
+//    while(t){}
+//
+//    alert('end');
+
+</script>
+</html>

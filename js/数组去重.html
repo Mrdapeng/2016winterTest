@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+/*
+*数组简单的去重，es6的话就用set，其他情况下可以用数组的indexOf方法，用一个空数组去indexof一个数组里每一个的值
+* 如果等于-1就代表这个数组里面还没有这个值，就把这项加进来，
+*
+* */
+    function checkArr(len,seqence) {
+
+        var newArr = [];
+        for (var i = 0; i <len; i++) {
+            if (newArr.indexOf(seqence[i]) == -1) {
+                newArr.push(seqence[i]);
+            }
+        }
+
+        return newArr;
+
+    }
+
+
+
+
+    console.log(checkArr(9,[1,6,8,8,8,8,8,8,8]));
+//    console.log(8 == "8");
+//    console.log(NaN == NaN);
+//    console.log(NaN === NaN);
+//    console.log(undefined == undefined);
+//    console.log(undefined === undefined);
+//    console.log(Object == Object);
+//    console.log(Object === Object);
+//    console.log(16 == "0x10")
+
+</script>
+</html>

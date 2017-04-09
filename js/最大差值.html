@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function checkminus(arr) {
+
+        var minus = 0;
+        for (var i = 0; i < arr.length-1; i++) {
+            for (var j = 1; i < arr.length; j++) {
+                if (arr[i] - arr[j] < minus) {
+                    minus = arr[i] - arr[j];
+                }
+            }
+        }
+        return minus;
+    }
+
+    console.log(checkminus([1,6,8,13,9,5]));
+
+</script>
+</html>

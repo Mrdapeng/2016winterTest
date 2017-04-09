@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    {{counter}}
+    <button @click="add(10)">addd</button>
+    <button @click="sayhi('lrp')">showname</button>
+    <p>{{showname}}</p>
+</div>
+
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            name:"lrp",
+            showname:''
+        },
+        methods: {
+            add: function (num) {
+
+                this.counter = this.counter + num;
+            },
+            show: function () {
+                this.counter - 1
+            },
+            sayhi:function (name) {
+                this.showname=name
+            }
+
+        }
+    })
+</script>
+</body>
+</html>

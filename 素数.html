@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div id="showDiv"></div>
+</head>
+<body>
+
+<script>
+    //    var brNum = 6; //换行
+    //    var startNum = 100; //初始值
+    //    var endNum = 1000; //结束值
+    //    window.onload = function () {
+    //        endNum += 1;
+    //        var str = "";
+    //        var n = 0;//当前列下标
+    //        var count;//整除数量
+    //        for (var i = startNum; i < endNum; i++) {
+    //            count = 0;
+    //            for (var j = 1; j <= i; j++) {
+    //                if (i % j == 0) {
+    //                    count++;
+    //                    if (count > 2) { //被两数以上所整除
+    //                        break;
+    //                    }
+    //                }
+    //            }
+    //            if (count == 2) { //判断质数
+    //                if (n == 0) { //新行
+    //                    str += "<br>";
+    //                }
+    //                str += i + "　";
+    //                if (++n == brNum) { //满列跳行
+    //                    n = 0;
+    //                }
+    //            }
+    //        }
+    //        document.getElementById("showDiv").innerHTML = str;
+    //    }
+    function fn() {
+        var result = [];
+        for (var i = 100; i < 1000; i++) {
+            var bFlag = true;
+            for (j = 2, j < Math.sqrt(i), j++) {
+                if (i % j == 0) {
+                    bFlag = false;
+                    break;
+                }
+            }
+            if (bFlag) {
+                result.push(i);
+            }
+        }
+        return result;
+    }
+
+
+</script>
+</body>
+</html>

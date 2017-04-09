@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var login = "public";
+    function User(login) {
+        this.login = login;
+        this.sayHi = function () {
+            console.log(this.login);
+        }
+    }
+    var user = new User('local');
+    //    console.log(user.sayHi());
+    user.sayHi;
+    setTimeout(user.sayHi(), 0);
+    setTimeout(user.sayHi, 0);
+    setTimeout(function () {
+        user.sayHi();
+
+    }, 0);
+
+    setTimeout(user.sayHi,0);
+    //    setTimeout(function () {
+    //        user.sayHi();
+    //        console.log(user);
+    //    }, 1000);
+    //    setTimeout(user.sayHi(),100);
+    //    console.log(user.sayHi);
+</script>
+</html>

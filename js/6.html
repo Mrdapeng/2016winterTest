@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+<head>
+    <title>droplist</title>
+    <meta charset="UTF-8">
+    <style>
+        #prov {
+            width: 150px;
+            height: 20px;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+
+<body onload="load()">
+<div>
+    <select class='prov' id='prov' onchange='show_prov()'>
+        <option value=''>--请选择省--</option>
+    </select>
+
+</div>
+
+<script>
+    var province = document.getElementById("prov");
+    var arr_prov = new Array(new Option("北京", "bj"), new Option("上海", "gd"), new Option("广州", "gd"));
+    function load() {
+        for (var i = 0; i < arr_prov.length; i++) {
+            province.options[i] = arr_prov[i];
+            arr_prov[i].shownum = i;
+        }
+
+    }
+
+    for (var i = 0; i < arr_prov.length; i++) {
+        console.log(arr_prov[i].shownum)
+
+    }
+
+</script>
+</body>
+</html>

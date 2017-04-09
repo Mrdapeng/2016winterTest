@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    //    console.time("start");
+
+    var arr = [];
+    for (var i = 0; i < 1000000; i++) {
+
+        arr[i] = i;
+
+    }
+
+    //    for (var i = 0; i < a.length; i++) {
+    //        a[i];
+    //
+    //    }
+    //    console.timeEnd("end");
+    console.time('for cache');
+    var sum = 0;
+    var len = arr.length;
+    for (var i = 0; i < len; i++) {
+        sum += arr[i];
+    }
+    console.timeEnd('for cache');
+    //forEach测试
+    console.time('forEach');
+    var sum = 0;
+    arr.forEach(function (ele) {
+        sum += ele;
+    });
+    //这段代码看起来更加简洁，但这种方法也有一个小缺陷：你不能使用break语句中断循环，也不能使用return语句返回到外层函数。
+    console.timeEnd('forEach');
+</script>
+</html>

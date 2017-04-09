@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+    function show(ele) {
+        console.log(ele);
+    }
+    function add() {
+        var a=1,b=2;
+        function closer() {
+
+            return a+b;
+        }
+
+        return closer();
+
+    }
+    show(add());
+    function test() {
+        var arr=[];
+        for (var i=0;i<10;i++){
+            arr[i]=function () {
+                return i;
+            };
+            
+        }
+        for (var a = 0; a < 10; a++) {
+            show(arr[a]());
+        }
+
+    };
+
+    test();
+    var book={
+
+        name:'this is a book',
+        date:'2017.4.3'
+
+    };
+    show(book.toString());
+//    用hasOwnlProperty检查对象是否包括特定的实例成员，in操作符的时候连原型上的属性也会搜索到
+    show(book.hasOwnProperty('name'));
+    show(book.hasOwnProperty('date'));
+show('toString'in book);
+
+
+
+
+</script>
+</html>

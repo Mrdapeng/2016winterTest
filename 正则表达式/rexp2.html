@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="ul">
+    <li class="aa">1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+
+
+</body>
+<script>
+    function getclassname(classname, context) {
+        if (document.getElementsByClassName(classname)) {
+            return document.getElementsByClassName(classname);
+
+        } else {
+            context = context || document;
+            var result = [];
+            var otag = document.getElementsByTagName("*");
+
+            var reg = new RegExp("//B" + classname + "//b");
+            for (var i = 0; i < otag.length; i++) {
+                if (reg.test(otag[i])) {
+                    result.push(otag[i]);
+                }
+
+
+            }
+            return otag;
+        }
+        return result;
+    }
+
+
+    var oul = document.getElementById('ul');
+    var ali = getclassname('aa');
+    for (var i = 0; i < ali.length; i++) {
+        ali[i].style.background = "red";
+
+    }
+
+</script>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*去哪儿网今日为了提升客服质量，对客服人员解决用户问题的情况进行记录，
+     并通过一定的规则对客服人员进行积分合算，积分高者将会获得好评。
+     为了不给客户人员的带来消极情绪，所以规则中不涉及减分项，只涉及加分项，规则如下：
+
+     1. 正确地回答用户的问题 + 10 分
+     2. 正确的回答用户的问题并给出正确解释 + 30 分 （无论之前回答过与否）
+     3. 正确地回答用户的问题但未给出正确解释，且该问题之前有过正确的回答 + 5 分
+
+     要求作为开发者的你，编写程序，计算客服人员的积分。
+
+     输入
+     · 第一行为此客服人员记录的条数n（1 <= n <= 100）
+     · 后面 n 行，为记录的详细信息，每行3个整数，分别是问题序号（0 < m <= 100）、
+     是否回答正确（1代表正确，0代表错误）、是否给出正确解释（1代表正确，0代表错误）。
+
+     输出
+     此客服人员的积分
+
+
+     样例输入
+     5
+     12 1 0
+     15 0 0
+     12 1 1
+     12 1 0
+     16 1 0
+
+     样例输出
+     55
+
+     */
+
+        var arr = [[12, 1, 0], [15, 0, 0], [12, 1, 1], [12, 1, 0], [16, 1, 0]];
+
+    //    for (var i = 0; i < arr.length; i++) {
+    //
+    //        arr[i][0].prototype.isAnswer = false;
+    //
+    //    }
+
+
+    //    for (var i = 0; i < arr.length; i++) {
+    //        console.log(arr[i][0].isAnswer);
+    //
+    //    }
+    //    console.log(firstShow(arr));
+
+
+    //    var finalArr = firstShow(arr);
+    function checkscore(n, arr) {
+        var sum = 0;
+        var newArr = (function firstShow(Arr) {
+            var newArr = [];
+
+            var temp = [];
+
+            for (var i = 0; i < arr.length; i++) {
+
+                if (temp.indexOf(arr[i][0]) === -1) {
+                    temp.push(arr[i][0]);
+                    newArr.push(true);
+                }
+                else {
+
+                    newArr.push(false);
+                }
+            }
+            return newArr;
+        })();
+        for (var i = 0; i < n; i++) {
+            if (arr[i][1] === 1 && arr[i][2] === 0) {
+
+                if (newArr[i] === true) {
+                    sum += 10;
+                } else {
+                    sum += 5;
+                }
+
+            } else if (arr[i[1]] === 0 && arr[i][2] === 0) {
+
+                sum += 0;
+            }
+            else if (arr[i][1] === 1 && arr[i][2] === 1) {
+
+                sum += 30;
+            }
+
+        }
+        return sum;
+    }
+
+    //    checkscore(5, arr, finalArr);
+    console.log(checkscore(5, arr));
+</script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function check(num1, num2) {
+        var max = num1 > num2 ? num1 : num2;
+        var min = num1 < num2 ? num1 : num2;
+        for (var i = max; i < num1 * num2; i++) {
+            if (i % max == 0 && i%min == 0) {
+                return i;
+            }
+        }
+        console.log(i);
+    }
+
+check(2,1);
+    var a=2;
+    var func=(
+        function(){
+        var a=3;
+        return function(){
+            a++;
+            alert(a);
+        }
+    })();
+
+    func();
+    func();
+</script>
+</html>

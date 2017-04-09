@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*1.0*/
+    //    var sound = function (animal) {
+    //        if (animal instanceof Duck) {
+    //            console.log('gagag');
+    //
+    //        } else if (animal instanceof Chicken) {
+    //            console.log('jijiji');
+    //
+    //        }
+    //
+    //
+    //    };
+    //
+    //    var Duck = function () {
+    //
+    //    };
+    //    var Chicken = function () {
+    //
+    //    };
+    //    var duck = new Duck();
+    //    var chicken = new Chicken();
+    //
+    //    sound(duck);
+    //    sound(chicken);
+    /*2.0*/
+
+    var makesound = function (animal) {
+        animal.sound();
+
+    };
+
+    var Duck = function () {
+
+    };
+
+    Duck.prototype.sound = function () {
+        console.log('gaga');
+    };
+
+    var Dog = function () {
+
+    };
+
+    Dog.prototype.sound = function () {
+        console.log('wangwangwang');
+    };
+
+    makesound(new Duck());
+    makesound(new Dog());
+
+    var googleMap = {
+        show: function () {
+            console.log('开始渲染谷歌地图');
+
+
+        }
+    };
+    var baiduMap = {
+        show: function () {
+            console.log('开始渲染百度地图');
+        }
+    };
+
+    var sougouMap = {
+        show: function () {
+            console.log('开始渲染搜狗地图');
+
+        }
+    };
+    var renderMap = function (map) {
+
+        if (map.show instanceof Function) {
+            map.show();
+        }
+
+    };
+    renderMap(googleMap);
+    renderMap(sougouMap);
+    renderMap(baiduMap);
+
+    /*创建作用域*/
+
+    var mYobject = (function () {
+        var private = 'private';
+
+        return {
+            public: function () {
+                console.log('public');
+                console.log(private);
+
+            }
+
+        }
+
+    })();
+mYobject.public();
+
+</script>
+</html>

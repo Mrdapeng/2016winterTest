@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="../jquery/jquery-1.12.4.js"></script>
+<body>
+输入： <input id="in" type="text" placeholder="write some thing">
+<button id="btn">click</button>
+<span id="result"></span>
+</body>
+<script>
+    $(function () {
+        $('#btn').on("click", function () {
+            $.get("phpajax.php", {name: $('#in').val()}, function (data) {
+                $('#result').html(data);
+            });
+//            alert("aaa");
+        });
+
+
+    });
+</script>
+</html>

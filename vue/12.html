@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+
+<div id="app">
+    <input v-model="msg" value="200" type="radio" name="money">
+    <input v-model="msg" value="300" type="radio" name="money">
+    <input v-model="msg" value="400" type="radio" name="money">
+    {{msg}}
+<P>
+    <input v-model="checked"  type="checkbox" >
+    {{checked ? no : "100"}}
+    <input v-model="checked"  type="checkbox" >
+    {{checked ? 200 : "no"}}
+    <input v-model="checked"  type="checkbox" >
+    {{checked ? 300 : "no"}}
+</P>
+
+<p>
+    <li @click="add" v-for="items in arr">{{items}}</li>
+
+</p>
+    {{totalprice}}
+</div>
+<script>
+
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: 0,
+            msg1:0,
+            arr:[200,300,400]
+
+        },
+        methods:{
+            add:function () {
+
+
+
+            }
+
+
+        }
+
+    })
+
+
+</script>
+</body>
+</html>

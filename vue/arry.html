@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <ul>
+        <li v-for="(item,index) in items">{{item}},{{index}}</li>
+        <li v-for="(a,b) in person1">{{a}}:{{b}}</li>
+        <li v-for="(v,k) in person">{{ k }}:{{ v }}</li>
+        <li v-for="v in 3">{{v}}</li>
+    </ul>
+</div>
+<script>
+    //    var a = new Vue({
+    //        el: '#app',
+    //        data(){
+    //            return {
+    //                items: [1, 2, 3],
+    //                    person:{
+    //                        name:"aa",
+    //                        age:'aaa'
+    //
+    //                    }
+    //
+    //            }
+    //        }
+    //    })
+    var a = new Vue({
+        el: '#app',
+        data(){
+            return {
+                items: [1, 2, 3],
+                person: {
+                    name: 'frodo',
+                    group: 'ring fellow'
+                }, person1: {
+                    name: "aaa",
+                    age: 'aaa'
+                }
+
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

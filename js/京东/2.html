@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    /*小明同学要参加一场考试，考试一共有n道题目，
+     小明必须做对至少60%的题目才能通过考试。考试结束后，
+     小明估算出每题做对的概率，p1,p2,...,pn。你能帮他算出他通过考试的概率吗？
+     输入
+     输入第一行一个数n（1<=n<=100），表示题目的个数。第二行n个整数，p1,p2,...,pn。
+     表示小明有pi%的概率做对第i题。（0<=pi<=100）
+     输出
+     小明通过考试的概率，最后结果四舍五入，保留小数点后五位。
+
+     样例输入
+     4
+     50 50 50 50
+     样例输出
+     0.31250
+
+     Hint
+     第一个样例中，每道题做对的概率都是0.5，想要通过考试至少要做对三题。所以最后的答案就是。*/
+
+
+    var n = 4;
+    var m = [50, 50, 50, 50];
+
+    function run(n, m) {
+        function factorial(n) {
+            return n > 1 ? n * factorial(n - 1) : 1;
+        }
+        var p = 1;
+        for (var i = 0; i < m.length; i++) {
+
+
+            p = p * ( m[i] / 100);
+        }
+        return (p * ( (factorial(n) / factorial(n - 1)) + 1)).toPrecision(5);
+    }
+    console.log(run(n, m));
+
+
+</script>
+</html>

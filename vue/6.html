@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="vue.js"></script>
+<div id="app">
+    <input type="text" v-bind:value="finalvalue">
+</div>
+<script>
+    var a = new Vue({
+        el:'#app',
+        computed: {
+            finalvalue: function () {
+                return this.value + 1
+            }
+        },
+        data(){
+
+            return {
+                value:41
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

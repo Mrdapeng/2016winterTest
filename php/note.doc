@@ -1,0 +1,143 @@
+事件源
+window.event.srcElenment e.target
+e.clientX  e.clientY
+return false 阻止浏览器默认行为 a标签 
+中文自动换行 英文不自动 不截断单词会被以为是长单词
+absolute left 0 top 0
+staitic 默认静态定位 
+fixed 固定 相对浏览器定位 早期ie版本不支持 
+document.body.scrollTop||document.
+塌陷问题 固定高度 浮动 或者是溢出隐藏
+多类选择器 #xxx.xxx id是xxx 类是xxx
+大于号是亲代选择器
+空格是子代选择器 是子孙后代
+.aa.bb 既有又有 
+完全透明的元素 必须加背景颜色 才能绑定颜色 早期兼容性问题 
+浮动上不去一般是父元素的宽度不够
+css精灵 css雪碧图
+background-image 
+background-repeat 
+background-poistion right top  xxpx center center 
+display none 透明度 visible none
+offsetwidth不包括外边距 只包括内容和内边距
+form action 对应的后台文件 url
+提交方式 url form  ajax
+input submit reset  form.xxx.value
+date 
+空字符串 null undefied 0 是false
+元素并不存在 是null
+单步优先级高过多步优先级
+变量 中括号 forin 循环属性 
+forin 对象和数组 循环谁 in 谁 数组的话就是下标 【】变量  .的话应该就是有该属性 
+break continue 只能在循环中 
+if只检查值 switch检查类型和值
+arguments.callee
+/&nbsp 空格 
+math.floor 向下取整
+round 四舍五入
+ceil向上取整 
+var a=function(){};
+函数立即调用 不会污染全局变量 (function(   ){    })();	
+（function（）｛｝）（）；
+for in obj2[p]
+string charAt  indexof判断某个字符串第一次出现的下标 split 按什么分割 字符串分割成数组 
+px一般是小数
+能不用定位的尽量不用
+元素塌陷问题 固定高度 或者浮动
+a加hover
+a.xxx 多位选择器 即是什么又是什么 
+大广告图片 backgroundimage center no-repeat
+while 或者do while 用一个值做标识位		
+section强调分块，一般有标题，article强调文本独立性
+nav 元素
+
+triggerhandler 不触发本身事件 
+fouce foucein 区别 是否支持事件冒泡
+mouseenter leave 没有事件冒泡 
+event.preventDefault()阻止默认行为
+event.stopPropagation()阻止事件冒泡
+标准浏览器阻止事件冒泡的 e.cancelable=true e.stopPropagation()
+_________________________________jQ_____________________________________________________
+jq 的extend多个对象合并成一个 
+()()函数立即调用
+(function)();
+display 看不着 空间释放 绑不上事件
+透明度 占着位置 能绑事件
+visibility 占着位置 绑不上位置
+找规律的 nth-child 从1开始
+width 内容宽度 
+innerwidt包括内容 padding
+outerwidth包括 内容 padding magrgin 参数为true 包括 outerwidth(true)
+offset是相对于文档  position是已定位的最近的祖先元素  offsetparent返回哪个定位的元素
+children亲子代 find 子孙后代
+mouse enter leave不冒泡
+hover不支持冒泡
+move out 冒泡
+有tittle元素的会触发浏览器默认的效果,会提示框，可以给当前对象增加一个自定义属性保存当前title的值，过后再取出来。
+
+ngnix load
+ZeroMq消息队列处理
+处理json
+json.encode ,json.decode
+eval jsonparser
+protobuf 谷歌json解释器 
+osi模型 七层  上四层 传输层 tcp udp application 层 自定义协议 wireshark 抓包工具 
+rfc文档 
+公有协议  
+传输层 tcp 奇偶校验 慢 udp内网快 可信的 tcp(http(包头，包体))
+路由层 arp/rarp arp(tcp(http(包头，包体))
+物理层 buffer 16进制编码 
+定时服务器 socket调用 内网 	
+function object 互相为子集 
+只要被new出来 就是个object __proyo__
+this相当于public 
+var 变量 相当于private
+js解释器 先扫描 全部var=undifined
+function bb(){} 被预先编译
+var bb=function(){}得走到才能执行 
+template engine
+object.prototype 产生的是{  } 空对象
+Function.prototype 产生的是{  } 是空function（）｛｝
+Function.prototype.isprototype(object) 
+子类的prototype=new 父类(  ) ;
+直接赋值 引用赋值 
+一个script标签就是自己的一个作用域 方法一定是
+变量有可能往上面的作用域找 
+function会被预编译 	
+scrollwidth offsetwidth 
+软刷 就近idc获取文件
+硬刷 强制远端服务器刷新
+访问的网页的js css资源 有可能传不回来，在没配置apache的情况下
+本地流状态 网络流状态  move_upload_file(("c:\1.text"),("d:\1.text"))
+requirejs seajs 模块加载
+requirejs 是amd a=>async 是提前执行
+requrie是动态创建script标签 通过正则匹配加载js文件 
+seajs 是cmd=>commen 是延迟执行
+defer async 异步 defer是ie支持 
+body的外边距是8px 给body去掉外边距
+原型继承添加方法
+属性写在方法内  
+fuction xx(){
+	this.xx=xx;
+	this.yy=yy;
+	this.zz={
+
+	};
+}
+xx.prototype=function(){
+	
+}
+
+ 方法通过类的prototype=function(){
+	
+}
+setinterval的里的this 是window对象    是window下的一个方法 
+fieldtest
+<label for ="input的id"> 
+ie6下的浮动会有几个像素的margin
+jq后生成元素事件绑定  事件委托到父元素上 
+$('父元素').on('事件'，'子元素'，function(){
+	
+});
+jpeg不透明  png24 透明
+外边距合并
