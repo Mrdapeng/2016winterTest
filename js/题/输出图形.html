@@ -11,14 +11,52 @@
 
 <script>
     function showNumImg(num) {
-        for (var i = 1; i <=num; i++) {
-            for (var j = 1; j <=i; j++) {
+        for (var i = 1; i <= num; i++) {
+            for (var j = 1; j <= i; j++) {
                 document.write(j);
             }
+            document.write('<p></p>');
+
             document.write('<br>');
 
         }
     }
-    showNumImg(6);
+    //    showNumImg(6);
+    function star(num) {
+        for(var i=1; i<=num; i++){
+            for(var k=0; k<=num-i; k++){
+                document.write("&nbsp;");
+            }
+            for(var j=1; j<=i; j++){
+                document.write("*&nbsp;");
+            }
+            document.write("<br>");
+        }
+
+    }
+    star(8);
+
+
 </script>
 </html>
+<!--<html>-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<script>-->
+
+<!--var a = window.prompt("请输入一个数");-->
+<!--for(var b = 1; b <= a; b++) {-->
+<!--for(var c = (a - b) * 2; c >= 0; c&#45;&#45;) {-->
+<!--document.write('&nbsp');-->
+<!--}-->
+<!--for(var d = 1; d <= b * 2 - 1; d++) {-->
+<!--document.write("*" + " ");-->
+
+<!--}-->
+<!--document.write("<br/>");-->
+<!--}-->
+<!--</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--</body>-->
+<!--</html>-->

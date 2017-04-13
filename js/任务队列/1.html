@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+//    setTimeout(function () {
+//        console.log('timeout1');
+//    });
+//
+//    new Promise(function (resolve) {
+//        console.log('promise1');
+//        for (var i = 0; i < 1000; i++) {
+//            i == 99 && resolve();
+//        }
+//        console.log('promise2');
+//    }).then(function () {
+//        console.log('then1');
+//    });
+//
+//    console.log('global1');
+
+    /*一个线程中，事件循环是卫唯一的，但是任务队列可以拥有多多个。
+     *任务队列又分为macro-task（宏任务）与micro-task（微任务），在最新标准中，它们被分别称为task与jobs。
+
+     macro-task大概包括：script(整体代码), setTimeout, setInterval, setImmediate, I/O, UI rendering。
+
+     micro-task大概包括: process.nextTick, Promise, Object.observe(已废弃), MutationObserver(html5新特性)
+     *
+     * */
+//
+//    var date = new Date();
+//
+//    console.log(date.getDay());
+//    console.log(date.getDate());
+//    console.log(Date.now());
+//
+//
+// var arr=[5,6,9,9,1];
+//    for ( i in arr){
+//        console.log(i,);
+//    }
+    console.log(window.name.toString());
+</script>
+</html>

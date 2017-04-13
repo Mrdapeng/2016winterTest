@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .demo {
+            position: relative;
+            height: 320px;
+            /*margin-top: 1rem;*/
+            width: 100%
+        }
+
+        .demo .item {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+            -webkit-transition: all 0.6s;
+            transition: all 0.6s;
+            width: 222px;
+            height: 300px;
+            /*border: 1px solid #ccc;*/
+            text-align: center;
+            line-height: 300px;
+            z-index: 1;
+            font-size: 74px;
+            color: #fff;
+        }
+
+        .demo .item_cur {
+            z-index: 3
+        }
+
+        .demo .item_0 {
+            -webkit-transform: translate3d(-104%, 12%, 0) scale3d(0.5, 0.5, 1);
+            transform: translate3d(-104%, 12%, 0) scale3d(0.5, 0.5, 1)
+        }
+
+        .demo .item_1 {
+            -webkit-transform: translate3d(-81%, 9%, 0) scale3d(0.7, 0.7, 1);
+            transform: translate3d(-81%, 9%, 0) scale3d(0.7, 0.7, 1);
+            z-index: 2
+        }
+
+        .demo .item_3 {
+            -webkit-transform: translate3d(-20%, 9%, 0) scale3d(0.7, 0.7, 1);
+            transform: translate3d(-20%, 9%, 0) scale3d(0.7, 0.7, 1);
+            z-index: 2
+        }
+
+        .demo .item_4 {
+            -webkit-transform: translate3d(4%, 12%, 0) scale3d(0.5, 0.5, 1);
+            transform: translate3d(4%, 12%, 0) scale3d(0.5, 0.5, 1)
+        }
+
+        .demo_btn{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="demo">
+    <div class="item item_0">1</div>
+    <div class="item item_1">2</div>
+    <div class="item item_cur">3</div>
+    <div class="item item_3">4</div>
+    <div class="item item_4">5</div>
+</div>
+<div class="demo_btn">
+    <a href="javascript:;" class="left" title="向左移动">&lt;&lt;</a>
+    <a href="javascript:;" class="right" title="向右移动">&gt;&gt;</a>
+    <p>（PC下可点击按钮切换，移动端可左右滑动切换）</p>
+</div>
+</body>
+<script src="jquery-1.12.4.js"></script>
+<script>
+    (function(){
+        var getRandomColor = function(){
+            return '#'+Math.floor(Math.random()*16777215).toString(16);
+        }
+
+        var egg_change = function(type){
+            var $demo = $('.demo'),
+                index = parseInt( $demo.attr('index_cur')||2 ),
+                $item = $('.demo .item'),
+                len = $item.length;
+
+            if( type=='left' ){
+                index = (index+1)%len;
+            }else{
+                index = (index-1+len)%len;
+            }
+            $demo.attr('index_cur', index);
+
+            $item.removeClass('item_0 item_1 item_3 item_4 item_cur');
+
+            $item.eq( (index-2+len)%len ).addClass('item_0');
+            $item.eq( (index-1+len)%len ).addClass('item_1');
+            $item.eq(index).addClass('item_cur');
+            $item.eq( (index+1)%len ).addClass('item_3');
+            $item.eq( (index+2)%len ).addClass('item_4');
+        }
+
+        $('.item').each(function(){
+            $(this).css('background-color', getRandomColor());
+        })
+
+        $('.demo').on('swipeLeft', function(){
+            egg_change( 'left' );
+        }).on('swipeRight', function(){
+            egg_change( 'right' );
+        });
+
+        $('.demo_btn').on('click', '.left', function(){
+            egg_change( 'left' );
+        }).on('click', '.right', function(){
+            egg_change( 'right' );
+        })
+    })();
+</script>
+</html>

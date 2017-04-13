@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var iRouter = [['N1', 7, 'A'], ['N2', 2, 'C'], ['N6', 7, 'F'], ['N8', 7, 'E'], ['N9', 7, 'F']];
+    var nextRouter = [['N2', 5], ['N3', 9], ['N6', 5], ['N8', 4], ['N9', 6]];
+    var objStartRouter = [];
+    var objStoptRouter = [];
+    var startNode = [];
+    var nextNode = [];
+
+    function Router(start, length, stop) {
+        this.start = start;
+        this.length = length;
+        this.stop = stop;
+
+    }
+
+    function createStartRouter() {
+        for (var i = 0; i < iRouter.length; i++) {
+            var item = new Router(iRouter[i][0], iRouter[i][1], iRouter[i][2]);
+            objStartRouter.push(item);
+        }
+    }
+    function craeteStopRouter() {
+        for (var i = 0; i < nextRouter.length; i++) {
+            var item = new Router(nextRouter[i][0], (nextRouter[i][1]));
+            objStoptRouter.push(item);
+        }
+    }
+    createStartRouter();
+    craeteStopRouter();
+    console.log(objStartRouter);
+    console.log(objStoptRouter);
+
+
+    /*
+     * 获取初始的start*/
+    var startArr = [];
+
+    function getStart(objStartRouter) {
+        for (var i = 0; i < objStartRouter.length; i++) {
+            startArr.push(objStartRouter[i].start);
+        }
+
+    }
+    console.log(getStart(objStartRouter));
+    function jump(objStartRouter, objStoptRouter) {
+        for (var i = 0,len=objStoptRouter.length; i < len; i++) {
+            for (var j = 0,len=objStartRouter.length; j < len; j++) {
+                if(objStoptRouter[i].start===objStoptRouter[i].start){
+
+
+                }
+            }
+
+        }
+        console.log(objStartRouter);
+    }
+    jump(objStartRouter, objStoptRouter);
+</script>
+</html>

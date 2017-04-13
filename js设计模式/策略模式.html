@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var startegie = {
+        's': function (money) {
+            return money * 4;
+        },
+        'a': function (money) {
+            return money * 3;
+        },
+        'b': function (money) {
+            return money * 2;
+        }
+    };
+
+    var clalte = function (level, money) {
+        return startegie[level](money);
+    };
+    console.log(clalte('s',500))
+
+
+
+
+</script>
+</html>

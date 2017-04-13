@@ -26,13 +26,49 @@
      样例输出
      7
      */
-    function run(n,m,q) {
+//    var line;
+//    var arr = [];
+//    while(line = read_line()){
+//        line = line.split(' ');
+//        for(var i=0; i<line.length;i++){
+//            line[i] = parseInt(line[i])
+//        }
+//        arr = [].concat(arr, line)
+//    }
+    /*
 
-        var max=0;
+    m是客户数量
+    n是产品数量
 
-
-    }
-
+    */
+    n = 5;
+    m = 4;
+//    arr.shift();
+//    arr.shift();
+    arr=[2,8,10,7];
+    /*临时对象*/
+    var temp = {
+        price:0,
+        profit:0
+    };
+        for(var i=0; i<m; i++){
+            /*利益0*/
+            var profit = 0;
+            var price=arr[i];/*2*/
+            var count = n;/*5*/
+            for(var j=0; j<m; j++){
+                if(count<1){break;}
+                if(arr[j]>=price){/**/
+                    profit += price;
+                    count--
+                }
+            }
+            if(profit>temp.profit){
+                temp.profit = profit;
+                temp.price = price
+            }
+        }
+    console.log(temp.price)
 
 </script>
 </html>

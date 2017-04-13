@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function fn(num) {
+        var isfn = true;
+        for (var i = 2; i < Math.pow(num, 1 / 2); i++) {
+            if (num % i == 0) {
+
+                isfn = false;
+            }
+        }
+        return isfn;
+    }
+    var num = 0;
+    for (var i = 100; i < 1000; i++) {
+        if (fn(i)) {
+            num++;
+            document.write(i + ' ')
+            if (num % 5 == 0) {
+                document.write('<br>')
+            }
+        }
+
+
+    }
+
+    //    console.log(fn(10));
+</script>
+</html>
